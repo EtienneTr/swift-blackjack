@@ -14,6 +14,7 @@
 		F14353C91CE4D0B800A65F3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14353C71CE4D0B800A65F3D /* LaunchScreen.storyboard */; };
 		F14353D41CE4D0B800A65F3D /* blackjackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14353D31CE4D0B800A65F3D /* blackjackTests.swift */; };
 		F14353DF1CE4D0B800A65F3D /* blackjackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14353DE1CE4D0B800A65F3D /* blackjackUITests.swift */; };
+		F1D0D2761CE4F12E0069B350 /* CardsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D0D2751CE4F12E0069B350 /* CardsAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		F14353DA1CE4D0B800A65F3D /* blackjackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blackjackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14353DE1CE4D0B800A65F3D /* blackjackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blackjackUITests.swift; sourceTree = "<group>"; };
 		F14353E01CE4D0B800A65F3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1D0D2751CE4F12E0069B350 /* CardsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				F14353BE1CE4D0B800A65F3D /* AppDelegate.swift */,
+				F1D0D2751CE4F12E0069B350 /* CardsAPI.swift */,
 				F14353C01CE4D0B800A65F3D /* ViewController.swift */,
 				F14353C21CE4D0B800A65F3D /* Main.storyboard */,
 				F14353C51CE4D0B800A65F3D /* Assets.xcassets */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1D0D2761CE4F12E0069B350 /* CardsAPI.swift in Sources */,
 				F14353C11CE4D0B800A65F3D /* ViewController.swift in Sources */,
 				F14353BF1CE4D0B800A65F3D /* AppDelegate.swift in Sources */,
 			);
@@ -484,6 +488,7 @@
 				F14353E51CE4D0B800A65F3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F14353E61CE4D0B800A65F3D /* Build configuration list for PBXNativeTarget "blackjackTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +497,7 @@
 				F14353E81CE4D0B800A65F3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F14353E91CE4D0B800A65F3D /* Build configuration list for PBXNativeTarget "blackjackUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +506,7 @@
 				F14353EB1CE4D0B800A65F3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
