@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F14353BF1CE4D0B800A65F3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14353BE1CE4D0B800A65F3D /* AppDelegate.swift */; };
+		F14353C11CE4D0B800A65F3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14353C01CE4D0B800A65F3D /* ViewController.swift */; };
+		F14353C41CE4D0B800A65F3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14353C21CE4D0B800A65F3D /* Main.storyboard */; };
+		F14353C61CE4D0B800A65F3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F14353C51CE4D0B800A65F3D /* Assets.xcassets */; };
+		F14353C91CE4D0B800A65F3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14353C71CE4D0B800A65F3D /* LaunchScreen.storyboard */; };
+		F14353D41CE4D0B800A65F3D /* blackjackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14353D31CE4D0B800A65F3D /* blackjackTests.swift */; };
+		F14353DF1CE4D0B800A65F3D /* blackjackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14353DE1CE4D0B800A65F3D /* blackjackUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F14353D01CE4D0B800A65F3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14353B31CE4D0B800A65F3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F14353BA1CE4D0B800A65F3D;
+			remoteInfo = blackjack;
+		};
+		F14353DB1CE4D0B800A65F3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14353B31CE4D0B800A65F3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F14353BA1CE4D0B800A65F3D;
+			remoteInfo = blackjack;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F14353BB1CE4D0B800A65F3D /* blackjack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blackjack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F14353BE1CE4D0B800A65F3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F14353C01CE4D0B800A65F3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F14353C31CE4D0B800A65F3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F14353C51CE4D0B800A65F3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F14353C81CE4D0B800A65F3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F14353CA1CE4D0B800A65F3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F14353CF1CE4D0B800A65F3D /* blackjackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blackjackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F14353D31CE4D0B800A65F3D /* blackjackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blackjackTests.swift; sourceTree = "<group>"; };
+		F14353D51CE4D0B800A65F3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F14353DA1CE4D0B800A65F3D /* blackjackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blackjackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F14353DE1CE4D0B800A65F3D /* blackjackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blackjackUITests.swift; sourceTree = "<group>"; };
+		F14353E01CE4D0B800A65F3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F14353B81CE4D0B800A65F3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F14353CC1CE4D0B800A65F3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F14353D71CE4D0B800A65F3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F14353B21CE4D0B800A65F3D = {
+			isa = PBXGroup;
+			children = (
+				F14353BD1CE4D0B800A65F3D /* blackjack */,
+				F14353D21CE4D0B800A65F3D /* blackjackTests */,
+				F14353DD1CE4D0B800A65F3D /* blackjackUITests */,
+				F14353BC1CE4D0B800A65F3D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F14353BC1CE4D0B800A65F3D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F14353BB1CE4D0B800A65F3D /* blackjack.app */,
+				F14353CF1CE4D0B800A65F3D /* blackjackTests.xctest */,
+				F14353DA1CE4D0B800A65F3D /* blackjackUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F14353BD1CE4D0B800A65F3D /* blackjack */ = {
+			isa = PBXGroup;
+			children = (
+				F14353BE1CE4D0B800A65F3D /* AppDelegate.swift */,
+				F14353C01CE4D0B800A65F3D /* ViewController.swift */,
+				F14353C21CE4D0B800A65F3D /* Main.storyboard */,
+				F14353C51CE4D0B800A65F3D /* Assets.xcassets */,
+				F14353C71CE4D0B800A65F3D /* LaunchScreen.storyboard */,
+				F14353CA1CE4D0B800A65F3D /* Info.plist */,
+			);
+			path = blackjack;
+			sourceTree = "<group>";
+		};
+		F14353D21CE4D0B800A65F3D /* blackjackTests */ = {
+			isa = PBXGroup;
+			children = (
+				F14353D31CE4D0B800A65F3D /* blackjackTests.swift */,
+				F14353D51CE4D0B800A65F3D /* Info.plist */,
+			);
+			path = blackjackTests;
+			sourceTree = "<group>";
+		};
+		F14353DD1CE4D0B800A65F3D /* blackjackUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F14353DE1CE4D0B800A65F3D /* blackjackUITests.swift */,
+				F14353E01CE4D0B800A65F3D /* Info.plist */,
+			);
+			path = blackjackUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F14353BA1CE4D0B800A65F3D /* blackjack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F14353E31CE4D0B800A65F3D /* Build configuration list for PBXNativeTarget "blackjack" */;
+			buildPhases = (
+				F14353B71CE4D0B800A65F3D /* Sources */,
+				F14353B81CE4D0B800A65F3D /* Frameworks */,
+				F14353B91CE4D0B800A65F3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = blackjack;
+			productName = blackjack;
+			productReference = F14353BB1CE4D0B800A65F3D /* blackjack.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F14353CE1CE4D0B800A65F3D /* blackjackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F14353E61CE4D0B800A65F3D /* Build configuration list for PBXNativeTarget "blackjackTests" */;
+			buildPhases = (
+				F14353CB1CE4D0B800A65F3D /* Sources */,
+				F14353CC1CE4D0B800A65F3D /* Frameworks */,
+				F14353CD1CE4D0B800A65F3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F14353D11CE4D0B800A65F3D /* PBXTargetDependency */,
+			);
+			name = blackjackTests;
+			productName = blackjackTests;
+			productReference = F14353CF1CE4D0B800A65F3D /* blackjackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F14353D91CE4D0B800A65F3D /* blackjackUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F14353E91CE4D0B800A65F3D /* Build configuration list for PBXNativeTarget "blackjackUITests" */;
+			buildPhases = (
+				F14353D61CE4D0B800A65F3D /* Sources */,
+				F14353D71CE4D0B800A65F3D /* Frameworks */,
+				F14353D81CE4D0B800A65F3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F14353DC1CE4D0B800A65F3D /* PBXTargetDependency */,
+			);
+			name = blackjackUITests;
+			productName = blackjackUITests;
+			productReference = F14353DA1CE4D0B800A65F3D /* blackjackUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F14353B31CE4D0B800A65F3D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = EtienneTR;
+				TargetAttributes = {
+					F14353BA1CE4D0B800A65F3D = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					F14353CE1CE4D0B800A65F3D = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = F14353BA1CE4D0B800A65F3D;
+					};
+					F14353D91CE4D0B800A65F3D = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = F14353BA1CE4D0B800A65F3D;
+					};
+				};
+			};
+			buildConfigurationList = F14353B61CE4D0B800A65F3D /* Build configuration list for PBXProject "blackjack" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F14353B21CE4D0B800A65F3D;
+			productRefGroup = F14353BC1CE4D0B800A65F3D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F14353BA1CE4D0B800A65F3D /* blackjack */,
+				F14353CE1CE4D0B800A65F3D /* blackjackTests */,
+				F14353D91CE4D0B800A65F3D /* blackjackUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F14353B91CE4D0B800A65F3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F14353C91CE4D0B800A65F3D /* LaunchScreen.storyboard in Resources */,
+				F14353C61CE4D0B800A65F3D /* Assets.xcassets in Resources */,
+				F14353C41CE4D0B800A65F3D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F14353CD1CE4D0B800A65F3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F14353D81CE4D0B800A65F3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F14353B71CE4D0B800A65F3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F14353C11CE4D0B800A65F3D /* ViewController.swift in Sources */,
+				F14353BF1CE4D0B800A65F3D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F14353CB1CE4D0B800A65F3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F14353D41CE4D0B800A65F3D /* blackjackTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F14353D61CE4D0B800A65F3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F14353DF1CE4D0B800A65F3D /* blackjackUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F14353D11CE4D0B800A65F3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F14353BA1CE4D0B800A65F3D /* blackjack */;
+			targetProxy = F14353D01CE4D0B800A65F3D /* PBXContainerItemProxy */;
+		};
+		F14353DC1CE4D0B800A65F3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F14353BA1CE4D0B800A65F3D /* blackjack */;
+			targetProxy = F14353DB1CE4D0B800A65F3D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F14353C21CE4D0B800A65F3D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F14353C31CE4D0B800A65F3D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F14353C71CE4D0B800A65F3D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F14353C81CE4D0B800A65F3D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F14353E11CE4D0B800A65F3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F14353E21CE4D0B800A65F3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F14353E41CE4D0B800A65F3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = blackjack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Etienne.blackjack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F14353E51CE4D0B800A65F3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = blackjack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Etienne.blackjack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F14353E71CE4D0B800A65F3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = blackjackTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Etienne.blackjackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/blackjack.app/blackjack";
+			};
+			name = Debug;
+		};
+		F14353E81CE4D0B800A65F3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = blackjackTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Etienne.blackjackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/blackjack.app/blackjack";
+			};
+			name = Release;
+		};
+		F14353EA1CE4D0B800A65F3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = blackjackUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Etienne.blackjackUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = blackjack;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		F14353EB1CE4D0B800A65F3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = blackjackUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Etienne.blackjackUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = blackjack;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F14353B61CE4D0B800A65F3D /* Build configuration list for PBXProject "blackjack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F14353E11CE4D0B800A65F3D /* Debug */,
+				F14353E21CE4D0B800A65F3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F14353E31CE4D0B800A65F3D /* Build configuration list for PBXNativeTarget "blackjack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F14353E41CE4D0B800A65F3D /* Debug */,
+				F14353E51CE4D0B800A65F3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F14353E61CE4D0B800A65F3D /* Build configuration list for PBXNativeTarget "blackjackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F14353E71CE4D0B800A65F3D /* Debug */,
+				F14353E81CE4D0B800A65F3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F14353E91CE4D0B800A65F3D /* Build configuration list for PBXNativeTarget "blackjackUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F14353EA1CE4D0B800A65F3D /* Debug */,
+				F14353EB1CE4D0B800A65F3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F14353B31CE4D0B800A65F3D /* Project object */;
+}
