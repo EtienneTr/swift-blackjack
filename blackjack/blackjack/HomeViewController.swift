@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewControlle.swift
 //  blackjack
 //
 //  Created by Supinfo on 12/05/16.
@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Foundation
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,17 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func GotoGameViewController() {
+        
+        let GameViewController = self.storyboard!.instantiateViewControllerWithIdentifier("GameViewController");
+        
+        self.navigationController!.pushViewController(GameViewController, animated: true);
+    }
 
+    @IBAction func PlayAction(sender: UIButton) {
+        GotoGameViewController()
+    }
 
 }
 
