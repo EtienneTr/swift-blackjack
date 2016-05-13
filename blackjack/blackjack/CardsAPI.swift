@@ -8,12 +8,12 @@
 
 import Foundation
 
-//CARD SUITS
+//CARD SUITS = couleur
 enum cardSuits: Int {
     case Diamonds = 1, Spades, Clubs, Hearts
 }
 
-//CARD TYPE
+//CARD TYPE = valeur
 enum cardType : Int{
     case AS = 1, KNAVE, QUEEN, KING, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, THEN
 }
@@ -21,7 +21,7 @@ enum cardType : Int{
 //CLASS CARDS
 class Cards {
     var type : cardType
-    var nbrValue : Int = 0
+    var nbrValue : Int = 0 //valeur de la carte dans le jeu.
     var suit : cardSuits
     
     init(_type: cardType, _suit: cardSuits){
