@@ -15,27 +15,33 @@ enum cardSuits: Int {
 
 //CARD TYPE = valeur
 enum cardType : Int{
-    case AS = 1, KNAVE, QUEEN, KING, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, THEN
+    case AS = 1, KNAVE, QUEEN, KING, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN
 }
 
 //CLASS CARDS
 class Cards {
-    var type : cardType
+    var type : cardType?
     var nbrValue : Int = 0 //valeur de la carte dans le jeu.
-    var suit : cardSuits
+    var suit : cardSuits?
+    var red : Bool
     
     init(_type: cardType, _suit: cardSuits){
-        self.type = _type;
-        self.suit = _suit;
-        self.nbrValue = getScore(_type);
+        self.type = _type
+        self.suit = _suit
+        self.red = false
+        self.nbrValue = getScore(_type)
         
+    }
+    
+    init(){
+        self.red = true
     }
     
     func getScore(type: cardType) -> Int{
         switch(type){
             case .AS:
                 return 11
-            case .KNAVE, .QUEEN, .KING, .THEN:
+            case .KNAVE, .QUEEN, .KING, .TEN:
                 return 10;
             case .NINE:
                 return 9;
