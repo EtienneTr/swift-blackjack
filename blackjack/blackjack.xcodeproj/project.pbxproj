@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F111FBF21CE5C0260041F98F /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111FBF11CE5C0260041F98F /* GameBoard.swift */; };
 		F14353BF1CE4D0B800A65F3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14353BE1CE4D0B800A65F3D /* AppDelegate.swift */; };
 		F14353C11CE4D0B800A65F3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14353C01CE4D0B800A65F3D /* ViewController.swift */; };
 		F14353C41CE4D0B800A65F3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14353C21CE4D0B800A65F3D /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F111FBF11CE5C0260041F98F /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 		F14353BB1CE4D0B800A65F3D /* blackjack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blackjack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14353BE1CE4D0B800A65F3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F14353C01CE4D0B800A65F3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				F14353BE1CE4D0B800A65F3D /* AppDelegate.swift */,
 				F1D0D2751CE4F12E0069B350 /* CardsAPI.swift */,
+				F111FBF11CE5C0260041F98F /* GameBoard.swift */,
 				F14353C01CE4D0B800A65F3D /* ViewController.swift */,
 				F14353C21CE4D0B800A65F3D /* Main.storyboard */,
 				F14353C51CE4D0B800A65F3D /* Assets.xcassets */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F111FBF21CE5C0260041F98F /* GameBoard.swift in Sources */,
 				F1D0D2761CE4F12E0069B350 /* CardsAPI.swift in Sources */,
 				F14353C11CE4D0B800A65F3D /* ViewController.swift in Sources */,
 				F14353BF1CE4D0B800A65F3D /* AppDelegate.swift in Sources */,
