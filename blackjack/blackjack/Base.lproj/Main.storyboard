@@ -211,9 +211,103 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ue-k4-b0y">
+                                <rect key="frame" x="0.0" y="508" width="600" height="92"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="center" ambiguous="YES" misplaced="YES" distribution="equalSpacing" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="3a7-q7-1KR">
+                                        <rect key="frame" x="131" y="8" width="315" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXc-mG-2vc">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="le7-6G-Nvk"/>
+                                                </constraints>
+                                                <state key="normal" title="Stay">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="OnStayAction:" destination="P0N-Uz-VTJ" eventType="touchUpInside" id="CtR-JW-ZBn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zW4-Hq-DV4">
+                                                <rect key="frame" x="100" y="0.0" width="70" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="zY1-BD-P2K"/>
+                                                </constraints>
+                                                <state key="normal" title="Hit">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="OnHitAction:" destination="P0N-Uz-VTJ" eventType="touchUpInside" id="1SU-ru-WzF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQ1-zc-cCp">
+                                                <rect key="frame" x="220" y="0.0" width="95" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="95" id="gN4-uL-Pl7"/>
+                                                </constraints>
+                                                <state key="normal" title="Double Down">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="OnDoubleAction:" destination="P0N-Uz-VTJ" eventType="touchUpInside" id="4IP-t5-f3d"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="a0F-ON-OUn">
+                                        <rect key="frame" x="139" y="46" width="315" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucT-d2-abF">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="a62-2b-bp3"/>
+                                                </constraints>
+                                                <state key="normal" title="Split">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="OnSplitAction:" destination="P0N-Uz-VTJ" eventType="touchUpInside" id="xaU-HE-nrW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVe-ka-mBE">
+                                                <rect key="frame" x="100" y="0.0" width="70" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="e3J-Wc-frg"/>
+                                                </constraints>
+                                                <state key="normal" title="Surrender">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="OnSurrAction:" destination="P0N-Uz-VTJ" eventType="touchUpInside" id="dac-cX-hh4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgN-EV-HVV">
+                                                <rect key="frame" x="220" y="0.0" width="95" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="95" id="I8I-oP-wfK"/>
+                                                </constraints>
+                                                <state key="normal" title="Insurence">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="OnInsurAction:" destination="P0N-Uz-VTJ" eventType="touchUpInside" id="1SH-lD-EPH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.21518427509999999" green="0.59266449290000001" blue="0.94788939790000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="3a7-q7-1KR" firstAttribute="leading" secondItem="4Ue-k4-b0y" secondAttribute="leadingMargin" constant="60" id="v9E-se-zoJ"/>
+                                    <constraint firstItem="a0F-ON-OUn" firstAttribute="leading" secondItem="4Ue-k4-b0y" secondAttribute="leadingMargin" constant="60" id="w9m-9F-DUs"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="YK5-K5-bSK" firstAttribute="top" secondItem="4Ue-k4-b0y" secondAttribute="bottom" id="5Ac-Sr-Zmi"/>
                             <constraint firstItem="8K6-In-ngc" firstAttribute="leading" secondItem="Un1-Ol-9k9" secondAttribute="leadingMargin" constant="60" id="7vx-ix-m0P"/>
                             <constraint firstItem="N6j-Me-ZQn" firstAttribute="centerX" secondItem="Un1-Ol-9k9" secondAttribute="centerX" id="9mR-QL-SwB"/>
                             <constraint firstItem="8K6-In-ngc" firstAttribute="top" secondItem="PE9-bP-pNm" secondAttribute="bottom" constant="60" id="Eez-ev-RhG"/>
@@ -226,12 +320,18 @@
                     <connections>
                         <outlet property="DealerCard1" destination="8K6-In-ngc" id="4Sb-EH-0UM"/>
                         <outlet property="DealerCard2" destination="RA7-lg-3gE" id="UOy-Ts-BR5"/>
+                        <outlet property="DoubleButton" destination="GQ1-zc-cCp" id="ee6-aq-Ze7"/>
+                        <outlet property="HitButton" destination="zW4-Hq-DV4" id="a3F-cz-q8t"/>
+                        <outlet property="InsurButton" destination="GgN-EV-HVV" id="3qP-3L-4s8"/>
                         <outlet property="Player1Card1" destination="F0V-Mg-1Kc" id="8d1-g8-gvW"/>
                         <outlet property="Player1Card2" destination="9me-8J-dpq" id="06s-tX-HvS"/>
                         <outlet property="Player2Card1" destination="hSb-NL-0ed" id="7a7-aJ-wK6"/>
                         <outlet property="Player2Card2" destination="05d-0S-UpC" id="0q1-TD-Eb6"/>
                         <outlet property="Player4Card1" destination="Xqi-OZ-hzR" id="6k0-XU-ODx"/>
                         <outlet property="Player4Card2" destination="LHF-Qj-1F9" id="ac2-3j-lTR"/>
+                        <outlet property="SplitButton" destination="ucT-d2-abF" id="kE7-P0-YQO"/>
+                        <outlet property="StayButton" destination="VXc-mG-2vc" id="ueX-sl-EpE"/>
+                        <outlet property="SurrButton" destination="xVe-ka-mBE" id="KB7-9r-dgt"/>
                         <outlet property="UserCard1" destination="yfV-jN-H95" id="9Ts-3G-hAh"/>
                         <outlet property="UserCard2" destination="Fky-cB-Jym" id="zzz-Ml-zb9"/>
                     </connections>

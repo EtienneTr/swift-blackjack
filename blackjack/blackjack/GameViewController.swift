@@ -67,4 +67,43 @@ class GameViewController: UIViewController {
         Player4Card1.text = String(players[3].HandCard[0].type!) + " " + String(players[3].HandCard[0].suit!)
         Player4Card2.text = String(players[3].HandCard[1].type!) + " " + String(players[3].HandCard[1].suit!)
     }
+    
+    
+    //ACTIONS : click buttons
+    @IBOutlet var StayButton: UIButton!
+    
+    @IBOutlet var HitButton: UIButton!
+    @IBOutlet var DoubleButton: UIButton!
+    @IBOutlet var SplitButton: UIButton!
+    @IBOutlet var SurrButton: UIButton!
+    @IBOutlet var InsurButton: UIButton!
+    
+    @IBAction func OnStayAction(sender: UIButton) {
+        print("stay")
+        game.PlayersHands[0].stay()
+    }
+    
+    @IBAction func OnHitAction(sender: UIButton) {
+        print("hit")
+        //game.PlayersHands[0].hit()
+    }
+    
+    @IBAction func OnDoubleAction(sender: UIButton) {
+        print("Double")
+        game.PlayersHands[0].doubleDown()
+    }
+    
+    @IBAction func OnSplitAction(sender: UIButton) {
+        print("split")
+        game.PlayersHands[0].split()
+    }
+    
+    @IBAction func OnSurrAction(sender: UIButton) {
+        print("Surrender")
+        game.PlayersHands[0].surrender()
+    }
+    
+    @IBAction func OnInsurAction(sender: UIButton) {
+        print("Insurance")
+    }
 }
