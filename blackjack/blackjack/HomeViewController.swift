@@ -14,8 +14,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        var game = Game();
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,9 +23,9 @@ class HomeViewController: UIViewController {
     
     func GotoGameViewController() {
         
-        let GameViewController = self.storyboard!.instantiateViewControllerWithIdentifier("GameViewController");
+        let IndexViewController = self.storyboard!.instantiateViewControllerWithIdentifier("IndexViewController");
         
-        self.navigationController!.pushViewController(GameViewController, animated: true);
+        self.navigationController!.pushViewController(IndexViewController, animated: true);
     }
     
     @IBAction func PlayAction(sender: UIButton) {

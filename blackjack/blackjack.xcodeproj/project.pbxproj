@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F111FBF21CE5C0260041F98F /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111FBF11CE5C0260041F98F /* GameBoard.swift */; };
-		F111FBF41CE5CA6C0041F98F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111FBF31CE5CA6C0041F98F /* GameViewController.swift */; };
+		F111FBF41CE5CA6C0041F98F /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111FBF31CE5CA6C0041F98F /* IndexViewController.swift */; };
 		F14353BF1CE4D0B800A65F3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14353BE1CE4D0B800A65F3D /* AppDelegate.swift */; };
 		F14353C11CE4D0B800A65F3D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14353C01CE4D0B800A65F3D /* HomeViewController.swift */; };
 		F14353C41CE4D0B800A65F3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14353C21CE4D0B800A65F3D /* Main.storyboard */; };
@@ -18,6 +18,9 @@
 		F14353DF1CE4D0B800A65F3D /* blackjackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14353DE1CE4D0B800A65F3D /* blackjackUITests.swift */; };
 		F1C6C28F1CE71FEA005E5E44 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6C28E1CE71FEA005E5E44 /* Cards.swift */; };
 		F1C6C2911CE7200F005E5E44 /* Shoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6C2901CE7200F005E5E44 /* Shoe.swift */; };
+		F1C6C2931CE7243F005E5E44 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6C2921CE7243F005E5E44 /* GameViewController.swift */; };
+		F1C6C2951CE73004005E5E44 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6C2941CE73004005E5E44 /* Hand.swift */; };
+		F1C6C2971CE7338B005E5E44 /* Chips.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6C2961CE7338B005E5E44 /* Chips.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,7 @@
 
 /* Begin PBXFileReference section */
 		F111FBF11CE5C0260041F98F /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
-		F111FBF31CE5CA6C0041F98F /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		F111FBF31CE5CA6C0041F98F /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		F14353BB1CE4D0B800A65F3D /* blackjack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blackjack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14353BE1CE4D0B800A65F3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F14353C01CE4D0B800A65F3D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +58,9 @@
 		F14353E01CE4D0B800A65F3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1C6C28E1CE71FEA005E5E44 /* Cards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		F1C6C2901CE7200F005E5E44 /* Shoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shoe.swift; sourceTree = "<group>"; };
+		F1C6C2921CE7243F005E5E44 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		F1C6C2941CE73004005E5E44 /* Hand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		F1C6C2961CE7338B005E5E44 /* Chips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chips.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +91,9 @@
 		F111FBF51CE5CA7F0041F98F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F111FBF31CE5CA6C0041F98F /* GameViewController.swift */,
 				F14353C01CE4D0B800A65F3D /* HomeViewController.swift */,
+				F111FBF31CE5CA6C0041F98F /* IndexViewController.swift */,
+				F1C6C2921CE7243F005E5E44 /* GameViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -148,7 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				F1C6C28E1CE71FEA005E5E44 /* Cards.swift */,
+				F1C6C2961CE7338B005E5E44 /* Chips.swift */,
 				F1C6C2901CE7200F005E5E44 /* Shoe.swift */,
+				F1C6C2941CE73004005E5E44 /* Hand.swift */,
 			);
 			name = CardAPI;
 			sourceTree = "<group>";
@@ -284,7 +293,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F111FBF41CE5CA6C0041F98F /* GameViewController.swift in Sources */,
+				F1C6C2951CE73004005E5E44 /* Hand.swift in Sources */,
+				F1C6C2971CE7338B005E5E44 /* Chips.swift in Sources */,
+				F1C6C2931CE7243F005E5E44 /* GameViewController.swift in Sources */,
+				F111FBF41CE5CA6C0041F98F /* IndexViewController.swift in Sources */,
 				F111FBF21CE5C0260041F98F /* GameBoard.swift in Sources */,
 				F1C6C2911CE7200F005E5E44 /* Shoe.swift in Sources */,
 				F1C6C28F1CE71FEA005E5E44 /* Cards.swift in Sources */,

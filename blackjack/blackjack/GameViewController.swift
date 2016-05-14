@@ -2,16 +2,17 @@
 //  GameViewController.swift
 //  blackjack
 //
-//  Created by Supinfo on 13/05/16.
+//  Created by Supinfo on 14/05/16.
 //  Copyright © 2016 EtienneTR. All rights reserved.
 //
 
-import UIKit
 import Foundation
+import UIKit
 
-class GameViewController: UIViewController, UITextFieldDelegate {
+class GameViewController: UIViewController {
     
-    @IBOutlet var IndexField: UITextField!
+    var IndexBlueCard = 20;
+    var game = Game()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,25 +20,18 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         self.navigationItem.hidesBackButton = true
         self.navigationItem.title = "Début de la partie"
         
-        //InputIndex.delegate = self
+        //init game
+        //game = Game();
+        //init shoe
+        game.createShoe(IndexBlueCard);
+        //init hand and draw
+        game.initHands();
+        
     }
     
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    //Placement de la carte bleu en interface
-    func ShowBlueCardAsk(Index : String){
-        //call game board
-        //redirect game viewer
-    }
-    
-    @IBAction func DidEndOnExit(sender: UITextField) {
-        let index = sender.text;
-        if(!index!.isEmpty){
-            self.ShowBlueCardAsk(index!);
-        }
-    }
+
 }

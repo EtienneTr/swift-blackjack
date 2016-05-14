@@ -79,9 +79,35 @@
             <point key="canvasLocation" x="305" y="349"/>
         </scene>
         <!--Game View Controller-->
+        <scene sceneID="UMB-Of-PmG">
+            <objects>
+                <viewController storyboardIdentifier="GameViewController" id="P0N-Uz-VTJ" customClass="GameViewController" customModule="blackjack" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PE9-bP-pNm"/>
+                        <viewControllerLayoutGuide type="bottom" id="YK5-K5-bSK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Un1-Ol-9k9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLay !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7Q-ca-8Vz">
+                                <rect key="frame" x="279" y="122" width="77" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Lc-2s-tl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="1162"/>
+        </scene>
+        <!--Index View Controller-->
         <scene sceneID="wYf-og-4iP">
             <objects>
-                <viewController storyboardIdentifier="GameViewController" id="ZAP-De-pEg" customClass="GameViewController" customModule="blackjack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IndexViewController" id="ZAP-De-pEg" customClass="IndexViewController" customModule="blackjack" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ziW-bk-spz"/>
                         <viewControllerLayoutGuide type="bottom" id="jcn-eQ-aFE"/>
@@ -91,7 +117,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0XZ-Ko-Wp8">
-                                <rect key="frame" x="20" y="96" width="560" height="193"/>
+                                <rect key="frame" x="20" y="97" width="560" height="193"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Index au choix :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8t-Hv-0Sp">
                                         <rect key="frame" x="127" y="25" width="316" height="24"/>
@@ -99,19 +125,32 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Index value" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qux-28-67o">
-                                        <rect key="frame" x="232" y="68" width="97" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lw2-i5-dhQ">
+                                        <rect key="frame" x="249" y="132" width="62" height="30"/>
+                                        <color key="backgroundColor" red="0.23693270533250965" green="0.5409269055880741" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="OK">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="DidEndEditing:" destination="ZAP-De-pEg" eventType="editingDidEnd" id="CE1-H7-cd6"/>
-                                            <action selector="DidEndOnExit:" destination="ZAP-De-pEg" eventType="editingDidEndOnExit" id="jnS-jn-Pjg"/>
+                                            <action selector="IndexOkAction:" destination="ZAP-De-pEg" eventType="touchUpInside" id="Dxq-VU-5Mk"/>
                                         </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Index" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5K-L5-UXs">
+                                        <rect key="frame" x="232" y="71" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="W8t-Hv-0Sp" firstAttribute="centerX" secondItem="0XZ-Ko-Wp8" secondAttribute="centerX" id="W4P-ha-nc6"/>
+                                    <constraint firstItem="Lw2-i5-dhQ" firstAttribute="centerX" secondItem="0XZ-Ko-Wp8" secondAttribute="centerX" id="XPD-Ke-8Sy"/>
+                                    <constraint firstItem="J5K-L5-UXs" firstAttribute="centerX" secondItem="0XZ-Ko-Wp8" secondAttribute="centerX" id="fts-cQ-RjL"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -121,12 +160,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="IndexField" destination="qux-28-67o" id="KFT-qs-2e2"/>
+                        <outlet property="IndexField" destination="J5K-L5-UXs" id="Lj7-Jk-fRa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASG-oU-DAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="1158"/>
+            <point key="canvasLocation" x="-664" y="1162"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gIJ-Rx-dsW">
@@ -139,6 +178,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="m3x-3W-DxC"/>
                         <segue destination="ZAP-De-pEg" kind="show" id="6cM-BA-5he"/>
+                        <segue destination="P0N-Uz-VTJ" kind="show" id="y87-wh-rA5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0DY-CS-PLd" userLabel="First Responder" sceneMemberID="firstResponder"/>

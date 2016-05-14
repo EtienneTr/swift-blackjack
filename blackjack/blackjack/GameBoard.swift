@@ -12,6 +12,10 @@ import Foundation
 class Game {
     var currShoe : [Cards]
     
+    //Hand player and dealer
+    var PlayersHands : [PlayerHand] = []
+    var Dealerhand : DealerHand = DealerHand()
+    
     init(){
         //init Shoe
         self.currShoe = Shoe().gameShoe;
@@ -24,7 +28,7 @@ class Game {
         
         print("Choisissez une carte entre 1 et 312, pour placer la carte bleu");
         //myInput = numéro de carte, on met la bleu après
-        createShoe(45)
+        //createShoe(45)
     }
     
     func createShoe(index: Int) {
@@ -46,5 +50,45 @@ class Game {
             else { print("REEEEEED") }
         }
         print(currShoe.count)
+    }
+    
+    //Draw Cards
+    func initHands() {
+        for _ in 0..<4{
+            PlayersHands.append(PlayerHand())
+        }
+        //PlayerHands 
+        //[0] = Current User Hand
+        //[1...3] = Player 1 to 4 Hand
+        
+        //DRAW : les 10 premières cartes
+        var i = 0;
+        var card : Cards
+        
+        for _ in 0..<10{
+            
+            if (i > 4){
+                i = 0;
+            };
+            
+            card = self.currShoe.first!
+            self.currShoe.removeFirst()
+            
+            if(i == 0){
+                self.Dealerhand.addCards(card)
+            }else{
+                self.PlayersHands[i - 1].addCards(card)
+            }
+            i+=1
+        }
+        
+        for card in Dealerhand.HandCard{
+            if(card.type != nil)
+            {
+                print(card.type!, " & ", card.suit!);
+            }
+            else { print("REEEEEED") }
+        }
+        
     }
 }
