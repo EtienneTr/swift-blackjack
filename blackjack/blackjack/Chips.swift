@@ -15,14 +15,12 @@ class Chips{
     var Green : Int
     var Red : Int
     var White : Int
-    var Black : Int
     
-    init(nbBlue : Int, nbGreen : Int, nbRed : Int, nbWhite : Int, nbBlack : Int){
+    init(nbBlue : Int, nbGreen : Int, nbRed : Int, nbWhite : Int){
         self.Blue = nbBlue;
         self.Green = nbGreen;
         self.Red = nbRed;
         self.White = nbWhite;
-        self.Black = nbBlack;
     }
     
     func double(){
@@ -30,14 +28,20 @@ class Chips{
         Green = Green*2
         Red = Red*2
         White = White*2
-        Black = Black*2
     }
     
     func halve(){
-        let result = sumValue()/2
+        var result: Int = sumValue()/2
+        White = result / 10
+        result = result % 10
+        Red = result / 5
+        result = result % 5
+        Green = result / 2
+        result = result % 2
+        Blue = result
     }
     
     func sumValue() -> Int{
-        return (Blue + Green + Red + White + Black)
+        return (Blue*1 + Green*2 + Red*5 + White*10)
     }
 }

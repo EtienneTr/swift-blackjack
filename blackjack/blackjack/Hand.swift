@@ -31,46 +31,55 @@ class PlayerHand : Hand {
     var double : Bool = false
     var secondHand : PlayerHand?
     var stakes : Chips?    //la mise
+    var insurance: Chips?
+    var insured: Bool = false
     
     //init user with chips
     override init(){
-        self.HandChips = Chips(nbBlue: 15,nbGreen: 15,nbRed: 15,nbWhite: 15,nbBlack: 15)
+        self.HandChips = Chips(nbBlue: 15,nbGreen: 15,nbRed: 15,nbWhite: 15)
     }
     
-    func bet(nbBlue : Int, nbGreen : Int, nbRed : Int, nbWhite : Int, nbBlack : Int){
-        stakes = Chips(nbBlue: nbBlue, nbGreen: nbGreen, nbRed: nbRed, nbWhite: nbWhite, nbBlack: nbBlack)
+    func bet(nbBlue : Int, nbGreen : Int, nbRed : Int, nbWhite : Int){
+        stakes = Chips(nbBlue: nbBlue, nbGreen: nbGreen, nbRed: nbRed, nbWhite: nbWhite)
     }
     
     //player stays
-    func stay() -> Bool {
+    func stay() -> Bool{
         return true
     }
     
     //player surrenders, takes back half his stakes
-    func surrender() {
+    func surrender(){
         out = true
         halveStakes()
     }
     
     //double the stakes
-    func doubleDown() {
+    func doubleDown(){
         double = true
         doubleStakes()
     }
     
     //player has a double, splits his hand into two hands
-    func split() {
+    func split(){
         secondHand = PlayerHand()
         secondHand!.stakes = self.stakes
     }
     
+    //player takes insurance worth half his stakes if dealer has an ace
+    func insure(){
+        insurance = stakes
+        insurance!.halve()
+        insured = true
+    }
+    
     //player has 9,10 or 11, double his stakes
-    func doubleStakes() {
+    func doubleStakes(){
         stakes!.double()
     }
     
     //divide stakes by 2
-    func halveStakes() {
+    func halveStakes(){
         stakes!.halve()
     }
 }
