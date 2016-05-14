@@ -34,14 +34,24 @@ class Game {
     func createShoe(index: Int) {
         var tmp : Cards
         print("Premiere carte apres carte bleu: ", currShoe[index].type!)
+        //move all cards before the blue card to the end of the deck
         for _ in 0..<index {
             tmp = currShoe[0]
             currShoe.removeFirst()
             currShoe.append(tmp)
         }
         print("Premiere carte du paquet apres coupage: ", currShoe[0].type!)
+        
+        //randomly (at least 30 cards after the blue card) put red card in the deck
         let redCard = Cards()
         currShoe.insert(redCard, atIndex: Int(arc4random_uniform(250)+30))
+        
+        //remove first 5 cards of the deck
+        for _ in 1...5 {
+            currShoe.removeFirst()
+        }
+        
+        
         for card in currShoe{
             if(card.type != nil)
             {

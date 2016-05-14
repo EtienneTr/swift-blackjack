@@ -24,4 +24,20 @@ class Chips{
         self.White = nbWhite;
         self.Black = nbBlack;
     }
+    
+    func double(){
+        Blue = Blue*2
+        Green = Green*2
+        Red = Red*2
+        White = White*2
+        Black = Black*2
+    }
+    
+    func halve(){
+        let result = sumValue()/2
+    }
+    
+    func sumValue() -> Int{
+        return (Blue + Green + Red + White + Black)
+    }
 }
