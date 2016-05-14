@@ -56,7 +56,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="PlayAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sis-sn-Sv5"/>
+                                            <action selector="PlayAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w5M-VX-ynD"/>
                                         </connections>
                                     </button>
                                 </subviews>

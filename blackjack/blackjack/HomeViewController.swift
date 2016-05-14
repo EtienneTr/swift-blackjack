@@ -29,6 +29,10 @@ class HomeViewController: UIViewController {
         
         self.navigationController!.pushViewController(GameViewController, animated: true);
     }
+    
+    @IBAction func PlayAction(sender: UIButton) {
+        self.GotoGameViewController()
+    }
 
 }
 

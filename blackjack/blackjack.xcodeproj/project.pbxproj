@@ -16,7 +16,8 @@
 		F14353C91CE4D0B800A65F3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14353C71CE4D0B800A65F3D /* LaunchScreen.storyboard */; };
 		F14353D41CE4D0B800A65F3D /* blackjackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14353D31CE4D0B800A65F3D /* blackjackTests.swift */; };
 		F14353DF1CE4D0B800A65F3D /* blackjackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14353DE1CE4D0B800A65F3D /* blackjackUITests.swift */; };
-		F1D0D2761CE4F12E0069B350 /* CardsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D0D2751CE4F12E0069B350 /* CardsAPI.swift */; };
+		F1C6C28F1CE71FEA005E5E44 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6C28E1CE71FEA005E5E44 /* Cards.swift */; };
+		F1C6C2911CE7200F005E5E44 /* Shoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6C2901CE7200F005E5E44 /* Shoe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,8 @@
 		F14353DA1CE4D0B800A65F3D /* blackjackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blackjackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14353DE1CE4D0B800A65F3D /* blackjackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blackjackUITests.swift; sourceTree = "<group>"; };
 		F14353E01CE4D0B800A65F3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1D0D2751CE4F12E0069B350 /* CardsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsAPI.swift; sourceTree = "<group>"; };
+		F1C6C28E1CE71FEA005E5E44 /* Cards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		F1C6C2901CE7200F005E5E44 /* Shoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shoe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +114,9 @@
 		F14353BD1CE4D0B800A65F3D /* blackjack */ = {
 			isa = PBXGroup;
 			children = (
+				F1C6C28D1CE71FC0005E5E44 /* CardAPI */,
 				F111FBF51CE5CA7F0041F98F /* ViewController */,
 				F14353BE1CE4D0B800A65F3D /* AppDelegate.swift */,
-				F1D0D2751CE4F12E0069B350 /* CardsAPI.swift */,
 				F111FBF11CE5C0260041F98F /* GameBoard.swift */,
 				F14353C21CE4D0B800A65F3D /* Main.storyboard */,
 				F14353C51CE4D0B800A65F3D /* Assets.xcassets */,
@@ -140,6 +142,15 @@
 				F14353E01CE4D0B800A65F3D /* Info.plist */,
 			);
 			path = blackjackUITests;
+			sourceTree = "<group>";
+		};
+		F1C6C28D1CE71FC0005E5E44 /* CardAPI */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6C28E1CE71FEA005E5E44 /* Cards.swift */,
+				F1C6C2901CE7200F005E5E44 /* Shoe.swift */,
+			);
+			name = CardAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +286,8 @@
 			files = (
 				F111FBF41CE5CA6C0041F98F /* GameViewController.swift in Sources */,
 				F111FBF21CE5C0260041F98F /* GameBoard.swift in Sources */,
-				F1D0D2761CE4F12E0069B350 /* CardsAPI.swift in Sources */,
+				F1C6C2911CE7200F005E5E44 /* Shoe.swift in Sources */,
+				F1C6C28F1CE71FEA005E5E44 /* Cards.swift in Sources */,
 				F14353C11CE4D0B800A65F3D /* HomeViewController.swift in Sources */,
 				F14353BF1CE4D0B800A65F3D /* AppDelegate.swift in Sources */,
 			);
