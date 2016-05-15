@@ -115,7 +115,7 @@ class GameViewController: UIViewController {
         }
         
         //Insurance if dealer have AS
-        if (game.Dealerhand.HandCard[0].type == cardType.AS){
+        if (game.Dealerhand.HandCard[0].type == cardType.ACE){
             InsurButton.enabled = true
             InsurButton.hidden = false
         }
