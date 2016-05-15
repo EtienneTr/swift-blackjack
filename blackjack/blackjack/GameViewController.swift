@@ -120,6 +120,9 @@ class GameViewController: UIViewController {
             InsurButton.hidden = false
         }
         
+        //after bet : update chips
+        updateTotalChips()
+        
         //place chips
         // self.view.addConstraint(NSLayoutConstraint(item: AllChipsView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
         //)
@@ -196,5 +199,23 @@ class GameViewController: UIViewController {
     
     @IBAction func OnInsurAction(sender: UIButton) {
         print("Insurance")
+    }
+    
+    
+    //OUTLET + UPDATE TOTAL CHIPS
+    @IBOutlet var TotalBlueChips: UILabel!
+    @IBOutlet var TotalWhiteChips: UILabel!
+    @IBOutlet var TotalGreenChips: UILabel!
+    @IBOutlet var TotalRedChips: UILabel!
+    
+    func updateTotalChips(){
+        let blue = self.game.PlayersHands[0].HandChips.Blue
+        TotalBlueChips.text = String(blue)
+        let green = self.game.PlayersHands[0].HandChips.Green
+        TotalGreenChips.text = String(green)
+        let red = self.game.PlayersHands[0].HandChips.Red
+        TotalRedChips.text = String(red)
+        let white = self.game.PlayersHands[0].HandChips.White
+        TotalWhiteChips.text = String(white)
     }
 }

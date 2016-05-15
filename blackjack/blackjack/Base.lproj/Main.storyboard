@@ -325,6 +325,10 @@
                         <outlet property="SplitButton" destination="ucT-d2-abF" id="kE7-P0-YQO"/>
                         <outlet property="StayButton" destination="VXc-mG-2vc" id="ueX-sl-EpE"/>
                         <outlet property="SurrButton" destination="xVe-ka-mBE" id="KB7-9r-dgt"/>
+                        <outlet property="TotalBlueChips" destination="oGf-gS-9Mn" id="Ita-5Q-Y1s"/>
+                        <outlet property="TotalGreenChips" destination="fP2-Ka-r7l" id="QPh-Fw-eLe"/>
+                        <outlet property="TotalRedChips" destination="77z-UQ-dHw" id="5Nv-Zm-mee"/>
+                        <outlet property="TotalWhiteChips" destination="ePU-2V-8iN" id="5a6-ka-nlg"/>
                         <outlet property="UserCard1" destination="yfV-jN-H95" id="9Ts-3G-hAh"/>
                         <outlet property="UserCard2" destination="Fky-cB-Jym" id="zzz-Ml-zb9"/>
                     </connections>
