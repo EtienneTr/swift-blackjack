@@ -11,6 +11,8 @@ import Foundation
 
 class IndexViewController: UIViewController {
     
+    var IndexBlue = 0
+    
     @IBOutlet var IndexField: UITextField!
     
     override func viewDidLoad() {
@@ -32,6 +34,7 @@ class IndexViewController: UIViewController {
     func ShowBlueCardAsk(Index : String){
         //call game board
         //redirect game viewer
+        IndexBlue = Int(Index)!
         GotoGameViewController()
     }
     

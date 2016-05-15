@@ -24,6 +24,7 @@ class GameViewController: UIViewController {
         //init game
         //game = Game();
         //init shoe
+         
         game.createShoe(IndexBlueCard);
         //init hand
         game.initHands();
@@ -39,6 +40,7 @@ class GameViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @IBOutlet var AllChipsView: UIView!
     func UIDisabledNotAllowed(){
         DoubleButton.enabled = false
         DoubleButton.hidden = true
@@ -117,6 +119,11 @@ class GameViewController: UIViewController {
             InsurButton.enabled = true
             InsurButton.hidden = false
         }
+        
+        //place chips
+        // self.view.addConstraint(NSLayoutConstraint(item: AllChipsView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        //)
+        //self.view.layoutIfNeeded()
     }
     
     //Game Cards
@@ -148,8 +155,8 @@ class GameViewController: UIViewController {
         Player2Card1.text = String(players[2].HandCard[0].type!) + " " + String(players[2].HandCard[0].suit!)
         Player2Card2.text = String(players[2].HandCard[1].type!) + " " + String(players[2].HandCard[1].suit!)
         
-        Player4Card1.text = String(players[3].HandCard[0].type!) + " " + String(players[3].HandCard[0].suit!)
-        Player4Card2.text = String(players[3].HandCard[1].type!) + " " + String(players[3].HandCard[1].suit!)
+        //Player4Card1.text = String(players[3].HandCard[0].type!) + " " + String(players[3].HandCard[0].suit!)
+        //Player4Card2.text = String(players[3].HandCard[1].type!) + " " + String(players[3].HandCard[1].suit!)
     }
     
     
