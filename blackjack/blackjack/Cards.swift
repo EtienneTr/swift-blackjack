@@ -37,7 +37,7 @@ class Cards {
         self.red = true
     }
     
-    func getScore(type: cardType) -> Int{
+    private func getScore(type: cardType) -> Int{
         switch(type){
         case .AS:
             return 11

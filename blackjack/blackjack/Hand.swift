@@ -94,6 +94,15 @@ class PlayerHand : Hand {
     func halveStakes(){
         stakes!.halve()
     }
+    
+    //sum player hand cards
+    func sumCards() -> Int{
+        var sum = 0
+        for card in HandCard{
+            sum += card.nbrValue
+        }
+        return sum
+    }
 }
 
 class DealerHand : Hand {

@@ -30,6 +30,8 @@ class GameViewController: UIViewController {
         //bet alert
         AlertBetOnGameStart();
         
+        //disable actions not allowed all time
+        UIDisabledNotAllowed()
     }
     
     
@@ -37,6 +39,16 @@ class GameViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func UIDisabledNotAllowed(){
+        DoubleButton.enabled = false
+        DoubleButton.hidden = true
+        SplitButton.enabled = false
+        SplitButton.hidden = true
+        InsurButton.enabled = false
+        InsurButton.hidden = true
+    }
+    
+    //BET ALERT ACTIONS
     @IBOutlet var BlueField: UITextField!
     @IBOutlet var GreenField: UITextField!
     @IBOutlet var RedField: UITextField!
@@ -51,7 +63,7 @@ class GameViewController: UIViewController {
             game.PlayersHands[0].bet(Int(BlueField.text!), nbGreen: Int(GreenField.text!), nbRed: Int(RedField.text!), nbWhite: Int(RedField.text!))
             
             //start game
-            initFirstDrawView(game.Dealerhand, players: game.PlayersHands)
+            startUIGame()
         }
         
         // display an alert
@@ -78,6 +90,33 @@ class GameViewController: UIViewController {
         })
         newWordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: betEntered))
         presentViewController(newWordPrompt, animated: true, completion: nil)
+    }
+    
+    //init cards and Actions allowed
+    func startUIGame(){
+        initFirstDrawView(game.Dealerhand, players: game.PlayersHands)
+        
+        //Check User Actions & enable allowed
+        let userCards = game.PlayersHands[0].HandCard
+        
+        //same type (même valeur) : split allowed
+        if(userCards[0].type == userCards[1].type){
+            SplitButton.hidden = false
+            SplitButton.enabled = true
+        }
+        
+        //If sum between 9 & 11 : double allowed
+        let sumCards = game.PlayersHands[0].sumCards()
+        if case 9...11 = sumCards{
+            DoubleButton.hidden = false
+            DoubleButton.enabled = true
+        }
+        
+        //Insurance if dealer have AS
+        if (game.Dealerhand.HandCard[0].type == cardType.AS){
+            InsurButton.enabled = true
+            InsurButton.hidden = false
+        }
     }
     
     //Game Cards
@@ -114,7 +153,7 @@ class GameViewController: UIViewController {
     }
     
     
-    //ACTIONS : click buttons
+    //ACTIONS USER : click buttons
     @IBOutlet var StayButton: UIButton!
     
     @IBOutlet var HitButton: UIButton!
