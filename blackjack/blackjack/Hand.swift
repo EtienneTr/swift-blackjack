@@ -39,8 +39,20 @@ class PlayerHand : Hand {
         self.HandChips = Chips(nbBlue: 15,nbGreen: 15,nbRed: 15,nbWhite: 15)
     }
     
-    func bet(nbBlue : Int, nbGreen : Int, nbRed : Int, nbWhite : Int){
-        stakes = Chips(nbBlue: nbBlue, nbGreen: nbGreen, nbRed: nbRed, nbWhite: nbWhite)
+    func bet(var nbBlue : Int?, var nbGreen : Int?, var nbRed : Int?, var nbWhite : Int?){
+        if(nbBlue == nil){
+            nbBlue = 0
+        }
+        if(nbGreen == nil){
+            nbGreen = 0
+        }
+        if(nbRed == nil){
+            nbRed = 0
+        }
+        if(nbWhite == nil){
+            nbWhite = 0
+        }
+        stakes = Chips(nbBlue: nbBlue!, nbGreen: nbGreen!, nbRed: nbRed!, nbWhite: nbWhite!)
     }
     
     //player stays

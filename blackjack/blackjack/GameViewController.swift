@@ -13,6 +13,7 @@ class GameViewController: UIViewController {
     
     var IndexBlueCard = 20;
     var game = Game()
+    var textView2 = UITextField()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +25,59 @@ class GameViewController: UIViewController {
         //game = Game();
         //init shoe
         game.createShoe(IndexBlueCard);
-        //init hand and draw
+        //init hand
         game.initHands();
+        //bet alert
+        AlertBetOnGameStart();
         
-        initFirstDrawView(game.Dealerhand, players: game.PlayersHands)
     }
     
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBOutlet var BlueField: UITextField!
+    @IBOutlet var GreenField: UITextField!
+    @IBOutlet var RedField: UITextField!
+    @IBOutlet var WhiteField: UITextField!
+    func AlertBetOnGameStart(){
+        
+        func betEntered(alert: UIAlertAction!){
+            // store the new word
+            self.textView2.text = self.BlueField.text!
+            
+            //Bet user
+            game.PlayersHands[0].bet(Int(BlueField.text!), nbGreen: Int(GreenField.text!), nbRed: Int(RedField.text!), nbWhite: Int(RedField.text!))
+            
+            //start game
+            initFirstDrawView(game.Dealerhand, players: game.PlayersHands)
+        }
+        
+        // display an alert
+        let newWordPrompt = UIAlertController(title: "Bet before start", message: "Blue, Red, Green, White", preferredStyle: UIAlertControllerStyle.Alert)
+        newWordPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.placeholder = "Blue Chips"
+            textField.keyboardType = UIKeyboardType.NumberPad
+            self.BlueField = textField
+        })
+        newWordPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.placeholder = "Green Chips"
+            textField.keyboardType = UIKeyboardType.NumberPad
+            self.GreenField = textField
+        })
+        newWordPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.placeholder = "Red Chips"
+            textField.keyboardType = UIKeyboardType.NumberPad
+            self.RedField = textField
+        })
+        newWordPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.placeholder = "White Chips"
+            textField.keyboardType = UIKeyboardType.NumberPad
+            self.WhiteField = textField
+        })
+        newWordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: betEntered))
+        presentViewController(newWordPrompt, animated: true, completion: nil)
     }
     
     //Game Cards
