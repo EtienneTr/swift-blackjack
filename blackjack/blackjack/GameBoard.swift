@@ -127,6 +127,8 @@ class Game {
         return(false)
     }
     
+    
+    
     func checkScore(player: PlayerHand)->Bool{
         return(player.sumCards()<21)
     }

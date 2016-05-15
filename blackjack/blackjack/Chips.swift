@@ -32,13 +32,21 @@ class Chips{
     
     func halve(){
         var result: Int = sumValue()/2
+        if(result > 10){
         White = result / 10
         result = result % 10
+        }
+        else if(result > 5){
         Red = result / 5
         result = result % 5
+        }
+        else if(result > 2){
         Green = result / 2
         result = result % 2
+        }
+        else{
         Blue = result
+        }
     }
     
     func sumValue() -> Int{
