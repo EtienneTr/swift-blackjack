@@ -155,7 +155,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     func initFirstDrawView(dealer : DealerHand, players : [PlayerHand]){
         DealerCard1.text = String(dealer.HandCard[0].type!) + " " + String(dealer.HandCard[0].suit!)
         
-        DealerCard2.text = String(dealer.HandCard[1].type!) + " " + String(dealer.HandCard[1].suit!)
+        //DealerCard2.text = String(dealer.HandCard[1].type!) + " " + String(dealer.HandCard[1].suit!)
         
         UserCard1.text = String(players[0].HandCard[0].type!) + " " + String(players[0].HandCard[0].suit!)
         UserCard2.text = String(players[0].HandCard[1].type!) + " " + String(players[0].HandCard[1].suit!)
@@ -170,6 +170,9 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         //Player4Card2.text = String(players[3].HandCard[1].type!) + " " + String(players[3].HandCard[1].suit!)
     }
     
+    func discoverDealerCard(){
+        DealerCard2.text = String(game.Dealerhand.HandCard[1].type!) + " " + String(game.Dealerhand.HandCard[1].suit!)
+    }
     
     //ACTIONS USER : click buttons
     @IBOutlet var StayButton: UIButton!
@@ -182,31 +185,34 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func OnStayAction(sender: UIButton) {
         print("stay")
-        game.PlayersHands[0].stay()
+        game.checkActions(game.PlayersHands[0], action: .Stay)
     }
     
     @IBAction func OnHitAction(sender: UIButton) {
         print("hit")
         //game.PlayersHands[0].hit()
+        game.checkActions(game.PlayersHands[0], action: .Hit)
+
     }
     
     @IBAction func OnDoubleAction(sender: UIButton) {
         print("Double")
-        game.PlayersHands[0].doubleDown()
+        game.checkActions(game.PlayersHands[0], action: .DoubleDown)
     }
     
     @IBAction func OnSplitAction(sender: UIButton) {
         print("split")
-        game.PlayersHands[0].split()
+        game.checkActions(game.PlayersHands[0], action: .Split)
     }
     
     @IBAction func OnSurrAction(sender: UIButton) {
         print("Surrender")
-        game.PlayersHands[0].surrender()
+        game.checkActions(game.PlayersHands[0], action: .Surrender)
     }
     
     @IBAction func OnInsurAction(sender: UIButton) {
         print("Insurance")
+        game.checkActions(game.PlayersHands[0], action: .Insure)
     }
     
     
