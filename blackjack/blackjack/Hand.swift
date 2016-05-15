@@ -60,6 +60,10 @@ class PlayerHand : Hand {
             nbWhite = 0
         }
         stakes = Chips(nbBlue: nbBlue!, nbGreen: nbGreen!, nbRed: nbRed!, nbWhite: nbWhite!)
+        HandChips.Blue -= nbBlue!
+        HandChips.Green -= nbGreen!
+        HandChips.Red -= nbRed!
+        HandChips.White -= nbWhite!
     }
     
     //player stays
