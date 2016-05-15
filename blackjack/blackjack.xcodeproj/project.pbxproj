@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F10350E91CE8B45A00623E1F /* blue_chip.png in Resources */ = {isa = PBXBuildFile; fileRef = F10350E81CE8B45A00623E1F /* blue_chip.png */; };
-		F10350EB1CE8B46C00623E1F /* green_chip.png in Resources */ = {isa = PBXBuildFile; fileRef = F10350EA1CE8B46C00623E1F /* green_chip.png */; };
-		F10350ED1CE8B47100623E1F /* red_chip.png in Resources */ = {isa = PBXBuildFile; fileRef = F10350EC1CE8B47100623E1F /* red_chip.png */; };
-		F10350EF1CE8B47A00623E1F /* white_chip.png in Resources */ = {isa = PBXBuildFile; fileRef = F10350EE1CE8B47A00623E1F /* white_chip.png */; };
+		F10350F31CE8BDB700623E1F /* white_chip.png in Resources */ = {isa = PBXBuildFile; fileRef = F10350F21CE8BDB700623E1F /* white_chip.png */; };
+		F10350F51CE8BDE300623E1F /* green_chip.png in Resources */ = {isa = PBXBuildFile; fileRef = F10350F41CE8BDE300623E1F /* green_chip.png */; };
+		F10350F71CE8BDE900623E1F /* red_chip.png in Resources */ = {isa = PBXBuildFile; fileRef = F10350F61CE8BDE900623E1F /* red_chip.png */; };
+		F10350F91CE8BDEF00623E1F /* blue_chip.png in Resources */ = {isa = PBXBuildFile; fileRef = F10350F81CE8BDEF00623E1F /* blue_chip.png */; };
 		F111FBF21CE5C0260041F98F /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111FBF11CE5C0260041F98F /* GameBoard.swift */; };
 		F111FBF41CE5CA6C0041F98F /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111FBF31CE5CA6C0041F98F /* IndexViewController.swift */; };
 		F14353BF1CE4D0B800A65F3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14353BE1CE4D0B800A65F3D /* AppDelegate.swift */; };
@@ -45,10 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F10350E81CE8B45A00623E1F /* blue_chip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_chip.png; path = ../../../../Downloads/blue_chip.png; sourceTree = "<group>"; };
-		F10350EA1CE8B46C00623E1F /* green_chip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = green_chip.png; path = ../../../../Downloads/green_chip.png; sourceTree = "<group>"; };
-		F10350EC1CE8B47100623E1F /* red_chip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_chip.png; path = ../../../../Downloads/red_chip.png; sourceTree = "<group>"; };
-		F10350EE1CE8B47A00623E1F /* white_chip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white_chip.png; path = ../../../../Downloads/white_chip.png; sourceTree = "<group>"; };
+		F10350F21CE8BDB700623E1F /* white_chip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_chip.png; sourceTree = "<group>"; };
+		F10350F41CE8BDE300623E1F /* green_chip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_chip.png; sourceTree = "<group>"; };
+		F10350F61CE8BDE900623E1F /* red_chip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_chip.png; sourceTree = "<group>"; };
+		F10350F81CE8BDEF00623E1F /* blue_chip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_chip.png; sourceTree = "<group>"; };
 		F111FBF11CE5C0260041F98F /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 		F111FBF31CE5CA6C0041F98F /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		F14353BB1CE4D0B800A65F3D /* blackjack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blackjack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,10 +99,10 @@
 		F10D07121CE8B14700BB57A9 /* Images.assets */ = {
 			isa = PBXGroup;
 			children = (
-				F10350EE1CE8B47A00623E1F /* white_chip.png */,
-				F10350EC1CE8B47100623E1F /* red_chip.png */,
-				F10350EA1CE8B46C00623E1F /* green_chip.png */,
-				F10350E81CE8B45A00623E1F /* blue_chip.png */,
+				F10350F81CE8BDEF00623E1F /* blue_chip.png */,
+				F10350F61CE8BDE900623E1F /* red_chip.png */,
+				F10350F41CE8BDE300623E1F /* green_chip.png */,
+				F10350F21CE8BDB700623E1F /* white_chip.png */,
 			);
 			name = Images.assets;
 			sourceTree = "<group>";
@@ -286,11 +286,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F10350E91CE8B45A00623E1F /* blue_chip.png in Resources */,
-				F10350EF1CE8B47A00623E1F /* white_chip.png in Resources */,
-				F10350ED1CE8B47100623E1F /* red_chip.png in Resources */,
-				F10350EB1CE8B46C00623E1F /* green_chip.png in Resources */,
 				F14353C91CE4D0B800A65F3D /* LaunchScreen.storyboard in Resources */,
+				F10350F71CE8BDE900623E1F /* red_chip.png in Resources */,
+				F10350F51CE8BDE300623E1F /* green_chip.png in Resources */,
+				F10350F91CE8BDEF00623E1F /* blue_chip.png in Resources */,
+				F10350F31CE8BDB700623E1F /* white_chip.png in Resources */,
 				F14353C61CE4D0B800A65F3D /* Assets.xcassets in Resources */,
 				F14353C41CE4D0B800A65F3D /* Main.storyboard in Resources */,
 			);
