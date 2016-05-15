@@ -41,9 +41,9 @@ class IndexViewController: UIViewController {
     //NAVIGATE : Game Controller
     func GotoGameViewController() {
         
-        let GameViewController = self.storyboard!.instantiateViewControllerWithIdentifier("GameViewController");
-        
-        self.navigationController!.pushViewController(GameViewController, animated: true);
+        let gameViewController = self.storyboard!.instantiateViewControllerWithIdentifier("GameViewController") as! GameViewController;
+        gameViewController.IndexBlueCard = IndexBlue
+        self.navigationController!.pushViewController(gameViewController, animated: true);
     }
     
     //ACTIONS : FIELD AND BUTTON (validate)

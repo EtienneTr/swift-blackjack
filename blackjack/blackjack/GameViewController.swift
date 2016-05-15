@@ -11,7 +11,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    var IndexBlueCard = 20;
+    var IndexBlueCard = 0;
     var game = Game()
     var textView2 = UITextField()
     
