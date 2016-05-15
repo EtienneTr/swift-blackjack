@@ -116,7 +116,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Card 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfV-jN-H95">
-                                <rect key="frame" x="84" y="399" width="194" height="20"/>
+                                <rect key="frame" x="84" y="338" width="194" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -127,14 +127,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Card 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fky-cB-Jym">
-                                <rect key="frame" x="342" y="401" width="158" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Me" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6j-Me-ZQn">
-                                <rect key="frame" x="279" y="366" width="42" height="21"/>
+                                <rect key="frame" x="279" y="310" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -297,6 +291,59 @@
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Card 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fky-cB-Jym">
+                                <rect key="frame" x="349" y="338" width="158" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QhS-TI-gYo">
+                                <rect key="frame" x="2" y="305" width="187" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bet :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9L-Cq-JTI">
+                                        <rect key="frame" x="0.0" y="5" width="33" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blue_chip.png" translatesAutoresizingMaskIntoConstraints="NO" id="zzH-tj-m4I">
+                                        <rect key="frame" x="21" y="3" width="24" height="25"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red_chip.png" translatesAutoresizingMaskIntoConstraints="NO" id="3jv-fI-d4W">
+                                        <rect key="frame" x="56" y="4" width="21" height="22"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white_chip.png" translatesAutoresizingMaskIntoConstraints="NO" id="VTg-uo-1BJ">
+                                        <rect key="frame" x="96" y="4" width="23" height="24"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="green_chip.png" translatesAutoresizingMaskIntoConstraints="NO" id="ud2-8L-IW0">
+                                        <rect key="frame" x="139" y="4" width="21" height="22"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSs-qX-ZF5">
+                                        <rect key="frame" x="81" y="4" width="32" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRK-9r-5F3">
+                                        <rect key="frame" x="165" y="5" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="029-ZN-KeS">
+                                        <rect key="frame" x="121" y="8" width="28" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ao5-vW-ttT">
+                                        <rect key="frame" x="43" y="5" width="22" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -306,6 +353,7 @@
                             <constraint firstItem="8K6-In-ngc" firstAttribute="top" secondItem="PE9-bP-pNm" secondAttribute="bottom" constant="60" id="Eez-ev-RhG"/>
                             <constraint firstItem="YK5-K5-bSK" firstAttribute="top" secondItem="FzB-W7-SPo" secondAttribute="bottom" constant="100" id="PNG-ep-W4c"/>
                             <constraint firstItem="RA7-lg-3gE" firstAttribute="leading" secondItem="8K6-In-ngc" secondAttribute="trailing" constant="50" id="aPe-kO-RF1"/>
+                            <constraint firstItem="QhS-TI-gYo" firstAttribute="leading" secondItem="Un1-Ol-9k9" secondAttribute="leading" constant="1" id="fTr-Eu-yiF"/>
                             <constraint firstItem="yfV-jN-H95" firstAttribute="leading" secondItem="Un1-Ol-9k9" secondAttribute="leadingMargin" constant="20" id="lBb-2h-O3f"/>
                             <constraint firstItem="Fky-cB-Jym" firstAttribute="leading" secondItem="yfV-jN-H95" secondAttribute="trailing" constant="30" id="mRN-h2-Trh"/>
                             <constraint firstItem="dba-XA-2vx" firstAttribute="centerX" secondItem="Un1-Ol-9k9" secondAttribute="centerX" id="qKK-ev-aIl"/>
@@ -313,6 +361,10 @@
                     </view>
                     <connections>
                         <outlet property="AllChipsView" destination="FzB-W7-SPo" id="S1M-qr-4eo"/>
+                        <outlet property="BetBlueChips" destination="ao5-vW-ttT" id="RRi-zS-9Ls"/>
+                        <outlet property="BetGreenChips" destination="eRK-9r-5F3" id="hVC-QL-Dti"/>
+                        <outlet property="BetRedChips" destination="oSs-qX-ZF5" id="pAB-O7-eji"/>
+                        <outlet property="BetWhiteChips" destination="029-ZN-KeS" id="dyw-9m-mNe"/>
                         <outlet property="DealerCard1" destination="8K6-In-ngc" id="4Sb-EH-0UM"/>
                         <outlet property="DealerCard2" destination="RA7-lg-3gE" id="UOy-Ts-BR5"/>
                         <outlet property="DoubleButton" destination="GQ1-zc-cCp" id="ee6-aq-Ze7"/>

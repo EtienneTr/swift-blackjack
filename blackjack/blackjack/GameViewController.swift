@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, UITextFieldDelegate {
     
     var IndexBlueCard = 0;
     var game = Game()
@@ -20,7 +20,6 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.hidesBackButton = true
         self.navigationItem.title = "Début de la partie"
-        
         //init game
         //game = Game();
         //init shoe
@@ -62,7 +61,7 @@ class GameViewController: UIViewController {
             self.textView2.text = self.BlueField.text!
             
             //Bet user
-            game.PlayersHands[0].bet(Int(BlueField.text!), nbGreen: Int(GreenField.text!), nbRed: Int(RedField.text!), nbWhite: Int(RedField.text!))
+            game.PlayersHands[0].bet(Int(BlueField.text!), nbGreen: Int(GreenField.text!), nbRed: Int(RedField.text!), nbWhite: Int(WhiteField.text!))
             
             //start game
             startUIGame()
@@ -73,25 +72,34 @@ class GameViewController: UIViewController {
         newWordPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
             textField.placeholder = "Blue Chips"
             textField.keyboardType = UIKeyboardType.NumberPad
+            textField.delegate = self
             self.BlueField = textField
         })
         newWordPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
             textField.placeholder = "Green Chips"
             textField.keyboardType = UIKeyboardType.NumberPad
+            textField.delegate = self
             self.GreenField = textField
         })
         newWordPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
             textField.placeholder = "Red Chips"
             textField.keyboardType = UIKeyboardType.NumberPad
+            textField.delegate = self
             self.RedField = textField
         })
         newWordPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
             textField.placeholder = "White Chips"
             textField.keyboardType = UIKeyboardType.NumberPad
+            textField.delegate = self
             self.WhiteField = textField
         })
         newWordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: betEntered))
         presentViewController(newWordPrompt, animated: true, completion: nil)
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let invalidCharacters = NSCharacterSet(charactersInString: "0123456789").invertedSet
+        return string.rangeOfCharacterFromSet(invalidCharacters, options: [], range: string.startIndex ..< string.endIndex) == nil
     }
     
     //init cards and Actions allowed
@@ -122,7 +130,7 @@ class GameViewController: UIViewController {
         
         //after bet : update chips
         updateTotalChips()
-        
+        updateBetChips()
         //place chips
         // self.view.addConstraint(NSLayoutConstraint(item: AllChipsView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
         //)
@@ -217,5 +225,23 @@ class GameViewController: UIViewController {
         TotalRedChips.text = String(red)
         let white = self.game.PlayersHands[0].HandChips.White
         TotalWhiteChips.text = String(white)
+    }
+    
+    
+    //OUTLET + UPDATE BET CHIPS
+    @IBOutlet var BetBlueChips: UILabel!
+    @IBOutlet var BetRedChips: UILabel!
+    @IBOutlet var BetGreenChips: UILabel!
+    @IBOutlet var BetWhiteChips: UILabel!
+    
+    func updateBetChips(){
+        let blue = self.game.PlayersHands[0].stakes!.Blue
+        BetBlueChips.text = String(blue)
+        let green = self.game.PlayersHands[0].stakes!.Green
+        BetGreenChips.text = String(green)
+        let red = self.game.PlayersHands[0].stakes!.Red
+        BetRedChips.text = String(red)
+        let white = self.game.PlayersHands[0].stakes!.White
+        BetWhiteChips.text = String(white)
     }
 }
