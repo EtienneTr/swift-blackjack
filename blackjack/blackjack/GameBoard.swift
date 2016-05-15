@@ -101,4 +101,37 @@ class Game {
         }
         
     }
+    
+    func checkActions(player: PlayerHand, action: actionType)->Bool{
+        let card = currShoe.removeFirst()
+        switch(action){
+        case .Hit:
+            player.addCards(card)
+            return(checkScore(player))
+        case .Stay:
+            break
+        case .Surrender:
+            player.surrender()
+            return (false)
+        case .DoubleDown:
+            player.doubleDown()
+            player.addCards(card)
+            return(false)
+        case .Split:
+            player.split()
+            return(true)
+        case .Insure:
+            player.insure()
+            return(true)
+        }
+        return(false)
+    }
+    
+    func checkScore(player: PlayerHand)->Bool{
+        return(player.sumCards()<21)
+    }
+}
+
+enum actionType: Int{
+    case Hit = 1, Stay, Surrender, DoubleDown, Split, Insure
 }

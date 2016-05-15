@@ -20,7 +20,14 @@ class Hand {
         HandCard.append(card)
     }
     
-    
+    //sum player hand cards
+    func sumCards() -> Int{
+        var sum = 0
+        for card in HandCard{
+            sum += card.nbrValue
+        }
+        return sum
+    }
     
 }
 
@@ -95,14 +102,16 @@ class PlayerHand : Hand {
         stakes!.halve()
     }
     
-    //sum player hand cards
-    func sumCards() -> Int{
-        var sum = 0
-        for card in HandCard{
-            sum += card.nbrValue
+    //changes Ace value depending on user choice 
+    func changeAceValue(value: Int){
+        let count = HandCard.count
+        for i in 0...count{
+            if HandCard[i].type! == cardType.ACE{
+                HandCard[i].nbrValue = value
+            }
         }
-        return sum
     }
+    
 }
 
 class DealerHand : Hand {

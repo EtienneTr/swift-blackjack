@@ -15,7 +15,7 @@ enum cardSuits: Int {
 
 //CARD TYPE = valeur
 enum cardType : Int{
-    case AS = 1, KNAVE, QUEEN, KING, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN
+    case ACE = 1, KNAVE, QUEEN, KING, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN
 }
 
 //CLASS CARDS
@@ -39,7 +39,7 @@ class Cards {
     
     private func getScore(type: cardType) -> Int{
         switch(type){
-        case .AS:
+        case .ACE:
             return 11
         case .KNAVE, .QUEEN, .KING, .TEN:
             return 10;
