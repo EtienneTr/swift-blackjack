@@ -142,10 +142,16 @@ class Game {
     
     
     func checkScore(player: PlayerHand)->Bool{
-        return(player.sumCards()<21)
+        return(player.sumCards()<=21)
+    }
+    
+    func endRound(){
+        //TODO : IF WIN
+        
     }
 }
 
 enum actionType: Int{
     case Hit = 1, Stay, Surrender, DoubleDown, Split, Insure
 }
+

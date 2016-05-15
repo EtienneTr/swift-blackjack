@@ -15,6 +15,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     var game = Game()
     var textView2 = UITextField()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -33,13 +34,18 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         //disable actions not allowed all time
         UIDisabledNotAllowed()
         
-        game.PlayersHands[0].HandCard[0].type = .ACE
-        game.PlayersHands[0].HandCard[1].type = .ACE
+        //game.PlayersHands[0].HandCard[0].type = .EIGHT
+        //game.PlayersHands[0].HandCard[1].type = .TWO
     }
     
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBOutlet var UserScore: UILabel!
+    func UIupdateScore(){
+        UserScore.text = String(game.PlayersHands[0].sumCards())
     }
     
     @IBOutlet var AllChipsView: UIView!
@@ -134,11 +140,21 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         //after bet : update chips
         updateTotalChips()
         updateBetChips()
+        
+        //score
+        UIupdateScore()
         //place chips
         // self.view.addConstraint(NSLayoutConstraint(item: AllChipsView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
         //)
         //self.view.layoutIfNeeded()
     }
+    
+    func looseAlert(){
+        let newWordPrompt = UIAlertController(title: "Loose", message: "You loose the round.", preferredStyle: UIAlertControllerStyle.Alert)
+        newWordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        presentViewController(newWordPrompt, animated: true, completion: nil)
+    }
+    
     
     //Game Cards
     @IBOutlet var DealerCard1: UILabel!
@@ -232,34 +248,57 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         if(game.SplitStatus == 1 || game.SplitStatus == 2 || lastSplit){
             UISplit()
             lastSplit = false
+        }else{
+            //end
+            discoverDealerCard()
+        }
+        
+        if(lastSplit){
+            discoverDealerCard()
         }
     }
     
     @IBAction func OnHitAction(sender: UIButton) {
         print("hit")
         //hit first or second hand
+        var result : Bool
         switch(game.SplitStatus){
         case 1:
             print("1")
-            game.checkActions(game.PlayersHands[0], action: .Hit)
+            result = game.checkActions(game.PlayersHands[0], action: .Hit)
             UISplit()
             break
         case 2:
-            game.checkActions(game.PlayersHands[0].secondHand!, action: .Hit)
+            result = game.checkActions(game.PlayersHands[0].secondHand!, action: .Hit)
             UISplit()
             break
         default:
-            game.checkActions(game.PlayersHands[0], action: .Hit)
+            result = game.checkActions(game.PlayersHands[0], action: .Hit)
             UIHit()
             break
 
+        }
+        
+        if (result == false){
+            looseAlert()
         }
 
     }
     
     @IBAction func OnDoubleAction(sender: UIButton) {
         print("Double")
-        game.checkActions(game.PlayersHands[0], action: .DoubleDown)
+        let result = game.checkActions(game.PlayersHands[0], action: .DoubleDown)
+        
+        //update cards & RAW
+        UIHit()
+        updateBetChips()
+        //TODO : End
+        if(result == false){
+            looseAlert()
+            //TODO END
+        }else{
+            //TODO END
+        }
     }
     
     @IBAction func OnSplitAction(sender: UIButton) {
@@ -318,6 +357,8 @@ class GameViewController: UIViewController, UITextFieldDelegate {
                 UserCard14.hidden = false
             }
                 
+                UserSplit1Label.text = "Hand 1 score : " + String(game.PlayersHands[0].sumCards())
+                
             }
             break
         case 2:
@@ -349,6 +390,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
                 UserCard24.hidden = false
             }
                 
+                UserSplit1Label.text = "Hand 2 score : " + String(game.PlayersHands[0].secondHand!.sumCards())
             }
             break
         default:
@@ -379,6 +421,9 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             UserCard24.text = text
             UserCard24.hidden = false
         }
+        
+        //score
+        UIupdateScore()
 
     }
     
