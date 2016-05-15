@@ -15,6 +15,7 @@ class Game {
     //Hand player and dealer
     var PlayersHands : [PlayerHand] = []
     var Dealerhand : DealerHand = DealerHand()
+    var SplitStatus = 0 //0 : no split, 1: split first hand,  2: split second
     
     init(){
         //init Shoe
@@ -109,6 +110,14 @@ class Game {
             player.addCards(card)
             return(checkScore(player))
         case .Stay:
+            //split : goto hand 2
+            if(SplitStatus == 1){
+                SplitStatus = 2;
+            } else if (SplitStatus == 2){
+                SplitStatus = 0
+                //END game
+            }
+                
             break
         case .Surrender:
             player.surrender()
@@ -119,6 +128,9 @@ class Game {
             return(false)
         case .Split:
             player.split()
+            if(SplitStatus == 0){
+                SplitStatus = 1//start first split
+            }
             return(true)
         case .Insure:
             player.insure()

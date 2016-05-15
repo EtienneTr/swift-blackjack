@@ -86,7 +86,7 @@ class PlayerHand : Hand {
     //player has a double, splits his hand into two hands
     func split(){
         secondHand = PlayerHand()
-        secondHand!.HandCard[0] = self.HandCard[1]
+        secondHand!.addCards(self.HandCard[1])
         self.HandCard.removeLast()
         secondHand!.stakes = self.stakes
     }

@@ -29,9 +29,12 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         game.initHands();
         //bet alert
         AlertBetOnGameStart();
-        
+        initSplitView();
         //disable actions not allowed all time
         UIDisabledNotAllowed()
+        
+        game.PlayersHands[0].HandCard[0].type = .ACE
+        game.PlayersHands[0].HandCard[1].type = .ACE
     }
     
     
@@ -174,6 +177,39 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         DealerCard2.text = String(game.Dealerhand.HandCard[1].type!) + " " + String(game.Dealerhand.HandCard[1].suit!)
     }
     
+    //SPLIT : CARDS - VIEWS
+    @IBOutlet var HandSplit1View: UIView!
+    @IBOutlet var HandSplit2View: UIView!
+    
+    @IBOutlet var UserCard11: UILabel!
+    @IBOutlet var UserCard13: UILabel!
+    @IBOutlet var UserCard14: UILabel!
+    @IBOutlet var UserSplit1Label: UILabel!
+    
+    @IBOutlet var UserCard22: UILabel!
+    @IBOutlet var UserCard23: UILabel!
+    @IBOutlet var UserCard24: UILabel!
+    @IBOutlet var UserSplit2Label: UILabel!
+    
+    func initSplitView(){
+        //hide labels & split cards
+        UserCard11.hidden = true
+        UserCard11.text = ""
+        UserCard13.hidden = true
+        UserCard13.text = ""
+        UserCard14.hidden = true
+        UserCard14.text = ""
+        UserSplit1Label.hidden = true
+        
+        UserCard22.hidden = true
+        UserCard22.text = ""
+        UserCard23.hidden = true
+        UserCard23.text = ""
+        UserCard24.hidden = true
+        UserCard24.text = ""
+        UserSplit2Label.hidden = true
+    }
+    
     //ACTIONS USER : click buttons
     @IBOutlet var StayButton: UIButton!
     
@@ -185,13 +221,39 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func OnStayAction(sender: UIButton) {
         print("stay")
+        var lastSplit = false
+        //disable split
+        if(game.SplitStatus == 2){
+            lastSplit = true
+        }
         game.checkActions(game.PlayersHands[0], action: .Stay)
+        
+        //enable split
+        if(game.SplitStatus == 1 || game.SplitStatus == 2 || lastSplit){
+            UISplit()
+            lastSplit = false
+        }
     }
     
     @IBAction func OnHitAction(sender: UIButton) {
         print("hit")
-        //game.PlayersHands[0].hit()
-        game.checkActions(game.PlayersHands[0], action: .Hit)
+        //hit first or second hand
+        switch(game.SplitStatus){
+        case 1:
+            print("1")
+            game.checkActions(game.PlayersHands[0], action: .Hit)
+            UISplit()
+            break
+        case 2:
+            game.checkActions(game.PlayersHands[0].secondHand!, action: .Hit)
+            UISplit()
+            break
+        default:
+            game.checkActions(game.PlayersHands[0], action: .Hit)
+            UIHit()
+            break
+
+        }
 
     }
     
@@ -202,7 +264,11 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func OnSplitAction(sender: UIButton) {
         print("split")
+        
         game.checkActions(game.PlayersHands[0], action: .Split)
+        //first SplitUI Action
+        UISplit()
+        
     }
     
     @IBAction func OnSurrAction(sender: UIButton) {
@@ -215,6 +281,106 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         game.checkActions(game.PlayersHands[0], action: .Insure)
     }
     
+    func UISplit(){
+        
+        //disable button
+        UIDisabledNotAllowed()
+        
+        switch(game.SplitStatus){
+        case 0:
+            HandSplit1View.layer.borderWidth = 0
+            HandSplit2View.layer.borderWidth = 0
+            initSplitView()
+            break
+        case 1:
+            if(game.PlayersHands[0].HandCard.count == 1){
+                //first hand hightlight
+                HandSplit1View.layer.cornerRadius = 10
+                HandSplit1View.layer.borderWidth = 2
+                HandSplit1View.layer.borderColor = UIColor.lightGrayColor().CGColor
+                UserSplit1Label.text = "Hand 1"
+                UserSplit1Label.hidden = false
+            }else{
+                
+            //first hand : Hit
+            let card = game.PlayersHands[0].HandCard.last!
+            let text = String(card.type!) + " " + String(card.suit!)
+            print(text)
+            print(UserCard11.text)
+            if(UserCard11.text == ""){
+                UserCard11.text = text
+                UserCard11.hidden = false
+            } else if (UserCard13.text == ""){
+                UserCard13.text = text
+                UserCard13.hidden = false
+            } else {
+                UserCard14.text = text
+                UserCard14.hidden = false
+            }
+                
+            }
+            break
+        case 2:
+            
+            if(game.PlayersHands[0].secondHand?.HandCard.count == 1){
+                //hightlight
+                HandSplit2View.layer.cornerRadius = 10
+                HandSplit2View.layer.borderWidth = 2
+                HandSplit2View.layer.borderColor = UIColor.lightGrayColor().CGColor
+                UserSplit2Label.text = "Hand 2"
+                UserSplit2Label.hidden = false
+                
+                //disable split 1
+                HandSplit1View.layer.borderWidth = 0
+            }else{
+            
+            //second hand Hit
+            let card = game.PlayersHands[0].secondHand!.HandCard.last!
+            let text = String(card.type!) + " " + String(card.suit!)
+            
+            if(UserCard22.text == ""){
+                UserCard22.text = text
+                UserCard22.hidden = false
+            } else if (UserCard23.text == ""){
+                UserCard23.text = text
+                UserCard23.hidden = false
+            } else {
+                UserCard24.text = text
+                UserCard24.hidden = false
+            }
+                
+            }
+            break
+        default:
+            break
+        }
+    }
+    
+    func UIHit(){
+        let card = game.PlayersHands[0].HandCard.last!
+        let text = String(card.type!) + " " + String(card.suit!)
+        
+        if(UserCard11.text == ""){
+            UserCard11.text = text
+            UserCard11.hidden = false
+        } else if (UserCard22.text == ""){
+            UserCard22.text = text
+            UserCard22.hidden = false
+        } else if (UserCard13.text == ""){
+            UserCard13.text = text
+            UserCard13.hidden = false
+        } else if (UserCard23.text == ""){
+            UserCard23.text = text
+            UserCard23.hidden = false
+        } else if (UserCard14.text == ""){
+            UserCard14.text = text
+            UserCard14.hidden = false
+        } else if (UserCard24.text == ""){
+            UserCard24.text = text
+            UserCard24.hidden = false
+        }
+
+    }
     
     //OUTLET + UPDATE TOTAL CHIPS
     @IBOutlet var TotalBlueChips: UILabel!
