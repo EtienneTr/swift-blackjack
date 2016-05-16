@@ -48,7 +48,7 @@ class Game {
         let redCard = Cards()
         currShoe.insert(redCard, atIndex: Int(arc4random_uniform(250)+30))
         
-        //reset to false 
+        //reset to false
         redCardPresent = false
         
         //remove first 5 cards of the deck
@@ -83,14 +83,14 @@ class Game {
         
         for _ in 0..<10{
             
-            if (i > 4){
-                i = 0;
-            };
+            if i > 4 {
+                i = 0
+            }
             
             card = self.currShoe.first!
             self.currShoe.removeFirst()
             
-            if(i == 0){
+            if i == 0 {
                 self.Dealerhand.addCards(card)
             }else{
                 self.PlayersHands[i - 1].addCards(card)
@@ -99,9 +99,9 @@ class Game {
         }
         
         for card in Dealerhand.HandCard{
-            if(card.type != nil)
+            if card.type != nil
             {
-                print(card.type!, " & ", card.suit!);
+                print(card.type!, " & ", card.suit!)
             }
             else { print("REEEEEED") }
         }
@@ -176,12 +176,34 @@ class Game {
         
         //check if player has won
         for i in 0...3 {
-            if PlayersHands[i].sumCards() > Dealerhand.sumCards() && PlayersHands[i] <= 21 {
-                PlayersHands[i].win = true
+            
+            if PlayersHands[i] <= 21 && (Dealerhand.sumCards() > 21 || PlayersHands[i].sumCards() > Dealerhand.sumCards()) {
+                PlayersHands[i].status = 2 //player won
             }
+            else if PlayersHands[i].sumCards() == Dealerhand.sumCards(){
+                PlayersHands[i].status = 1 //tie
+            }
+            else { PlayersHands[i].status = 0 //player lost }
         }
         
+        
+
         return redCard
+    }
+
+    func updateChips(player: PlayerHand){
+        if Dealerhand.sumCards() = 21 && player.insured == true {
+            player.returnInsurance()
+        }
+        if player.status = 1 {
+            player.returnStakes()
+        }
+        else if player.status = 2 {
+            player.winChips()
+        }
+        else if player.status = 3 {
+            player.winChips(true)
+        }
     }
     
     func checkRedCard()->Card{
@@ -197,4 +219,3 @@ class Game {
 enum actionType: Int{
     case Hit = 1, Stay, Surrender, DoubleDown, Split, Insure
 }
-

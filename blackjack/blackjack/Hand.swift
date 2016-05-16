@@ -32,6 +32,7 @@ class Hand {
 }
 
 
+
 class PlayerHand : Hand {
     var HandChips : Chips
     var out : Bool = false
@@ -40,7 +41,7 @@ class PlayerHand : Hand {
     var stakes : Chips?    //la mise
     var insurance: Chips?
     var insured: Bool = false
-    var win: Bool = false
+    var status: Int = 0 // 0 = lose, 1 = tie, 2 = win
     
     //init user with chips
     override init(){
@@ -76,6 +77,7 @@ class PlayerHand : Hand {
     func surrender(){
         out = true
         halveStakes()
+        returnStakes()
     }
     
     //double the stakes
@@ -96,6 +98,10 @@ class PlayerHand : Hand {
     func insure(){
         insurance = stakes
         insurance!.halve()
+        HandChips.Blue -= insurance!.Blue
+        HandChips.Green -= insurance!.Green
+        HandChips.Red -= insurance!.Red
+        HandChips.White -= insurance!.White
         insured = true
     }
     
@@ -103,10 +109,38 @@ class PlayerHand : Hand {
     func doubleStakes(){
         stakes!.double()
     }
-    
-    //divide stakes by 2
+
     func halveStakes(){
         stakes!.halve()
+    }
+    
+    func returnStakes(){
+        HandChips.Blue += stakes?.Blue
+        HandChips.Green += stakes?.Green
+        HandChips.Red += stakes?.Red
+        HandChips.White += stakes?.White
+    }
+    
+    func winChips(blackjack: Bool = false){
+        if blackjack = false {
+            HandChips.Blue += stakes?.Blue*2
+            HandChips.Green += stakes?.Green*2
+            HandChips.Red += stakes?.Red*2
+            HandChips.White += stakes?.White*2
+        }
+        else if blackjack = true {
+            HandChips.Blue += Int(floor(stakes?.Blue*1.5))
+            HandChips.Green += Int(floor(stakes?.Green*1.5))
+            HandChips.Red += Int(floor(stakes?.Red*1.5))
+            HandChips.White += Int(floor(stakes?.White*1.5))
+        }
+    }
+    
+    func returnInsurance(){
+        HandChips.Blue += insurance!.Blue*2
+        HandChips.Green += insurance!.Green*2
+        HandChips.Red += insurance!.Red*2
+        HandChips.White += insurance!.White*2
     }
     
     //changes Ace value depending on user choice 
