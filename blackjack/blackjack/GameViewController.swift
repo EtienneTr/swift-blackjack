@@ -143,22 +143,34 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         
         //score
         UIupdateScore()
+        
+        //blackjack
+        if(game.PlayersHands[0].sumCards() == 21){
+            game.PlayersHands[0].status = 3
+            game.endRound()
+            UIEndAction()
+        }
         //place chips
         // self.view.addConstraint(NSLayoutConstraint(item: AllChipsView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
         //)
         //self.view.layoutIfNeeded()
     }
     
-    func looseAlert(){
-        let newWordPrompt = UIAlertController(title: "Loose", message: "You loose the round.", preferredStyle: UIAlertControllerStyle.Alert)
-        newWordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+    //ALERT
+    func gameAlert(text : String){
+        let newWordPrompt = UIAlertController(title: "Game message", message: text, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        newWordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: callbackAlertEndGame))
         presentViewController(newWordPrompt, animated: true, completion: nil)
     }
+    
     
     
     //Game Cards
     @IBOutlet var DealerCard1: UILabel!
     @IBOutlet var DealerCard2: UILabel!
+    @IBOutlet var DealerCard3: UILabel!
+    @IBOutlet var DealerCard4: UILabel!
 
     @IBOutlet var UserCard1: UILabel!
     @IBOutlet var UserCard2: UILabel!
@@ -191,6 +203,16 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     
     func discoverDealerCard(){
         DealerCard2.text = String(game.Dealerhand.HandCard[1].type!) + " " + String(game.Dealerhand.HandCard[1].suit!)
+        
+        //more cards
+        if(game.Dealerhand.HandCard.count > 2){
+            DealerCard3.text = String(game.Dealerhand.HandCard[2].type!) + " " + String(game.Dealerhand.HandCard[2].suit!)
+            DealerCard3.hidden = false
+        }
+        if(game.Dealerhand.HandCard.count > 3){
+            DealerCard4.text = String(game.Dealerhand.HandCard[3].type!) + " " + String(game.Dealerhand.HandCard[3].suit!)
+            DealerCard4.hidden = false
+        }
     }
     
     //SPLIT : CARDS - VIEWS
@@ -250,11 +272,11 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             lastSplit = false
         }else{
             //end
-            discoverDealerCard()
+            UIEndAction()
         }
         
         if(lastSplit){
-            discoverDealerCard()
+            UIEndAction()
         }
     }
     
@@ -280,25 +302,20 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         }
         
         if (result == false){
-            looseAlert()
+            UIEndAction()
         }
 
     }
     
     @IBAction func OnDoubleAction(sender: UIButton) {
         print("Double")
-        let result = game.checkActions(game.PlayersHands[0], action: .DoubleDown)
+        game.checkActions(game.PlayersHands[0], action: .DoubleDown)
         
         //update cards & RAW
         UIHit()
         updateBetChips()
-        //TODO : End
-        if(result == false){
-            looseAlert()
-            //TODO END
-        }else{
-            //TODO END
-        }
+        //End
+        UIEndAction()
     }
     
     @IBAction func OnSplitAction(sender: UIButton) {
@@ -313,8 +330,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     @IBAction func OnSurrAction(sender: UIButton) {
         print("Surrender")
         game.checkActions(game.PlayersHands[0], action: .Surrender)
-        updateBetChips()
-        updateTotalChips()  
+        UIEndAction()
     }
     
     @IBAction func OnInsurAction(sender: UIButton) {
@@ -462,5 +478,86 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         BetRedChips.text = String(red)
         let white = self.game.PlayersHands[0].stakes!.White
         BetWhiteChips.text = String(white)
+    }
+    
+    //END ACTION
+    @IBOutlet var IndexBlue: UITextField!
+    
+    func UIEndAction(){
+        discoverDealerCard()
+        updateBetChips()
+        updateTotalChips()
+        
+        if(game.PlayersHands[0].status == 0){
+            gameAlert("You loose the round :(")
+        }else if (game.PlayersHands[0].status == 1){
+            //tie
+            gameAlert("It's a tie !")
+        }else if (game.PlayersHands[0].status == 1){
+            //win
+            gameAlert("You win the round")
+        }else{
+            //blackjack
+        }
+        
+
+    }
+    
+    func callbackAlertEndGame(alert: UIAlertAction!) {
+        resetUI()
+        
+        if(game.redCardPresent){
+            //reset : new Blue Index
+            let indexBlue = UIAlertController(title: "Index blue card", message: "Chosse blue card position (5 - 310)", preferredStyle: UIAlertControllerStyle.Alert)
+            indexBlue.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+                textField.placeholder = "Blue Chips"
+                textField.keyboardType = UIKeyboardType.NumberPad
+                textField.delegate = self
+                self.IndexBlue = textField
+            })
+            
+            indexBlue.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: ResetGame))
+            presentViewController(indexBlue, animated: true, completion: nil)
+        }else{
+            //new round
+            game.initHands();
+            AlertBetOnGameStart();
+            initSplitView();
+            UIDisabledNotAllowed();
+        }
+    }
+    
+    func resetUI(){
+        //reset split
+        initSplitView()
+        
+        //reset dealer card
+        DealerCard2.text = "Card 2"
+        DealerCard3.hidden = true
+        DealerCard4.hidden = true
+        
+        //reset cards
+        
+    }
+    
+    func ResetGame(alert: UIAlertAction!){
+        
+        
+        if (IndexBlue.text == ""){
+            IndexBlue.text = "0"
+        }
+        
+        IndexBlueCard = Int(IndexBlue.text!)!
+        
+        //new game
+        //self.game = Game()
+        game.createShoe(IndexBlueCard);
+        //init hand
+        game.initHands();
+        //bet alert
+        AlertBetOnGameStart();
+        initSplitView();
+        //disable actions not allowed all time
+        UIDisabledNotAllowed()
     }
 }
