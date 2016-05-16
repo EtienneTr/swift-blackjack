@@ -276,13 +276,8 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         //hit first or second hand
         var result : Bool
         switch(game.SplitStatus){
-        case 1:
-            print("1")
+        case 1,2:
             result = game.checkActions(game.PlayersHands[0], action: .Hit)
-            UISplit()
-            break
-        case 2:
-            result = game.checkActions(game.PlayersHands[0].secondHand!, action: .Hit)
             UISplit()
             break
         default:

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "blackjack/GameViewController.swift"
-            timestampString = "485123199.547756"
+            timestampString = "485124731.4798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "602"
-            endingLineNumber = "602">
+            startingLineNumber = "601"
+            endingLineNumber = "601">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "blackjack/GameViewController.swift"
-            timestampString = "485119848.06557"
+            timestampString = "485124731.4798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
             landmarkName = "OnHitAction(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "blackjack/GameViewController.swift"
-            timestampString = "485123199.547756"
+            timestampString = "485124731.4798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "501"
-            endingLineNumber = "501"
+            startingLineNumber = "496"
+            endingLineNumber = "496"
             landmarkName = "UIEndAction()"
             landmarkType = "5">
          </BreakpointContent>
