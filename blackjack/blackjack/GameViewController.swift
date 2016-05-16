@@ -508,6 +508,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
 
     }
     
+    //new round or new game
     func callbackAlertEndGame(alert: UIAlertAction!) {
         resetUI()
         game.NewGame()
@@ -532,6 +533,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    //defaukt reset for new round
     func resetUI(){
         //reset split
         initSplitView()
@@ -545,6 +547,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    //WHEN red card = restart
     func ResetGame(alert: UIAlertAction!){
         
         
