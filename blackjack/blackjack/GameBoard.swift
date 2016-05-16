@@ -164,7 +164,6 @@ class Game {
                 SplitStatus = 0
                 endRound()
                 return false
-                
             }
             endRound()
             return (false)
