@@ -154,17 +154,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         // self.view.addConstraint(NSLayoutConstraint(item: AllChipsView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
         //)
         //self.view.layoutIfNeeded()
-    }
-    
-    //ALERT
-    func gameAlert(var text : String){
-        text += "\n Your point : " + String(game.PlayersHands[0].sumCards()) + "\n Dealer point : " + String(game.Dealerhand.sumCards())
-        let newWordPrompt = UIAlertController(title: "Game message", message: text, preferredStyle: UIAlertControllerStyle.Alert)
-        
-        newWordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: callbackAlertEndGame))
-        presentViewController(newWordPrompt, animated: true, completion: nil)
-    }
-    
+    }   
     
     
     //Game Cards
@@ -491,18 +481,24 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         updateBetChips()
         updateTotalChips()
         
+        var text = ""
         if(game.PlayersHands[0].status == 0){
-            gameAlert("You loose the round :(")
+            text = "You loose the round :("
         }else if (game.PlayersHands[0].status == 1){
             //tie
-            gameAlert("It's a tie !")
+            text = "It's a tie !"
         }else if (game.PlayersHands[0].status == 1){
             //win
-            gameAlert("You win the round")
+            text = "You win the round"
         }else{
             //blackjack
         }
         
+        text += "\n Your point : " + String(game.PlayersHands[0].sumCards()) + "\n Dealer point : " + String(game.Dealerhand.sumCards())
+        let newWordPrompt = UIAlertController(title: "Game message", message: text, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        newWordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: callbackAlertEndGame))
+        presentViewController(newWordPrompt, animated: true, completion: nil)
 
     }
     

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "blackjack/GameViewController.swift"
-            timestampString = "485119656.292846"
+            timestampString = "485121725.819554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "590"
-            endingLineNumber = "590">
+            startingLineNumber = "596"
+            endingLineNumber = "596">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -88,28 +88,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "blackjack/GameViewController.swift"
-            timestampString = "485120949.965743"
+            timestampString = "485121725.819554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "494"
-            endingLineNumber = "494"
+            startingLineNumber = "495"
+            endingLineNumber = "495"
             landmarkName = "UIEndAction()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "blackjack/GameViewController.swift"
-            timestampString = "485121097.425299"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "gameAlert(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
