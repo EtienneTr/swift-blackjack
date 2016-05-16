@@ -151,7 +151,7 @@ class Game {
                 return(checkScore(player))
             }
             else if SplitStatus == 2 {
-                player.secondHand?.addCards(card)
+                player.secondHand!.addCards(card)
                 if !checkScore(player.secondHand!) { endRound() }
                 return(checkScore(player.secondHand!))
             }
@@ -244,6 +244,7 @@ class Game {
         //reset player hand
         let player = PlayersHands[0]
         player.HandCard = []
+        player.secondHand?.HandCard = []
         player.status = 0
         SplitStatus = 0
         Dealerhand.HandCard = []

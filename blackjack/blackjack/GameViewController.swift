@@ -327,6 +327,12 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     @IBAction func OnInsurAction(sender: UIButton) {
         print("Insurance")
         game.checkActions(game.PlayersHands[0], action: .Insure)
+        
+        let newWordPrompt = UIAlertController(title: "Insurance", message: "Insurance OK", preferredStyle: UIAlertControllerStyle.Alert)
+        newWordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        presentViewController(newWordPrompt, animated: true, completion: nil)
+        
+        InsurButton.hidden = true
     }
     
     func UISplit(){
