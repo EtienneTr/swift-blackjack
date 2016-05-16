@@ -206,19 +206,20 @@ class Game {
         var player = PlayersHands[0]
         //check if player has won
             
-            if player.sumCards() <= 21 && (Dealerhand.sumCards() > 21 || player.sumCards() > Dealerhand.sumCards()) {
-                player.status = 2 //player won
-            }
-            else if player.sumCards() == Dealerhand.sumCards(){
-                player.status = 1 //tie
-            }
-            else {
-                player.status = 0 //player lost
-            }
-            
-            updateChips(player)
+        if player.sumCards() <= 21 && (Dealerhand.sumCards() > 21 || player.sumCards() > Dealerhand.sumCards()) {
+            player.status = 2 //player won
+        }
+        else if player.sumCards() == Dealerhand.sumCards(){
+            player.status = 1 //tie
+        }
+        else {
+            player.status = 0 //player lost
+        }
         
+        updateChips(player)
         
+        //reset player hand 
+        player.HandCard = []
 
         return redCardPresent
     }
