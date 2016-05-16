@@ -8,6 +8,10 @@
 
 import Foundation
 
+//Action Player
+enum actionType: Int {
+    case Hit = 1, Stay, Surrender, DoubleDown, Split, Insure
+}
 
 class Game {
     var currShoe : [Cards]
@@ -108,7 +112,14 @@ class Game {
         
     }
     
-    
+    func checkRedCard()->Cards{
+        var card = currShoe.removeFirst()
+        if card.type == nil {
+            redCardPresent = true
+            card = currShoe.removeFirst()
+        }
+        return card
+    }
     
     func checkActions(player: PlayerHand, action: actionType)->Bool{
 
@@ -177,45 +188,36 @@ class Game {
         //check if player has won
         for i in 0...3 {
             
-            if PlayersHands[i] <= 21 && (Dealerhand.sumCards() > 21 || PlayersHands[i].sumCards() > Dealerhand.sumCards()) {
+            if PlayersHands[i].sumCards() <= 21 && (Dealerhand.sumCards() > 21 || PlayersHands[i].sumCards() > Dealerhand.sumCards()) {
                 PlayersHands[i].status = 2 //player won
             }
             else if PlayersHands[i].sumCards() == Dealerhand.sumCards(){
                 PlayersHands[i].status = 1 //tie
             }
-            else { PlayersHands[i].status = 0 //player lost }
+            else {
+                PlayersHands[i].status = 0 //player lost
+            }
         }
         
         
 
-        return redCard
+        return redCardPresent
     }
 
     func updateChips(player: PlayerHand){
-        if Dealerhand.sumCards() = 21 && player.insured == true {
+        if Dealerhand.sumCards() == 21 && player.insured == true {
             player.returnInsurance()
         }
-        if player.status = 1 {
+        if player.status == 1 {
             player.returnStakes()
         }
-        else if player.status = 2 {
+        else if player.status == 2 {
             player.winChips()
         }
-        else if player.status = 3 {
+        else if player.status == 3 {
             player.winChips(true)
         }
     }
     
-    func checkRedCard()->Card{
-        var card = currShoe.removeFirst()
-        if card.type == nil {
-            redCard = true
-            card = currShoe.removeFirst()
-        }
-        return card
-    }
-}
-
-enum actionType: Int{
-    case Hit = 1, Stay, Surrender, DoubleDown, Split, Insure
+    
 }

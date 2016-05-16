@@ -115,24 +115,24 @@ class PlayerHand : Hand {
     }
     
     func returnStakes(){
-        HandChips.Blue += stakes?.Blue
-        HandChips.Green += stakes?.Green
-        HandChips.Red += stakes?.Red
-        HandChips.White += stakes?.White
+        HandChips.Blue += stakes!.Blue
+        HandChips.Green += stakes!.Green
+        HandChips.Red += stakes!.Red
+        HandChips.White += stakes!.White
     }
     
     func winChips(blackjack: Bool = false){
-        if blackjack = false {
-            HandChips.Blue += stakes?.Blue*2
-            HandChips.Green += stakes?.Green*2
-            HandChips.Red += stakes?.Red*2
-            HandChips.White += stakes?.White*2
+        if blackjack == false {
+            HandChips.Blue += stakes!.Blue*2
+            HandChips.Green += stakes!.Green*2
+            HandChips.Red += stakes!.Red*2
+            HandChips.White += stakes!.White*2
         }
-        else if blackjack = true {
-            HandChips.Blue += Int(floor(stakes?.Blue*1.5))
-            HandChips.Green += Int(floor(stakes?.Green*1.5))
-            HandChips.Red += Int(floor(stakes?.Red*1.5))
-            HandChips.White += Int(floor(stakes?.White*1.5))
+        else if blackjack == true {
+            HandChips.Blue += Int(floor(Double(stakes!.Blue) * 1.5))
+            HandChips.Green += Int(floor(Double(stakes!.Green) * 1.5))
+            HandChips.Red += Int(floor(Double(stakes!.Red) * 1.5))
+            HandChips.White += Int(floor(Double(stakes!.White) * 1.5))
         }
     }
     
