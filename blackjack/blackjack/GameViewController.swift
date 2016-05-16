@@ -556,6 +556,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         
         //new game
         //self.game = Game()
+        game.currShoe = Shoe().gameShoe
         game.createShoe(IndexBlueCard);
         //init hand
         game.initHands();
