@@ -139,8 +139,11 @@ class Game {
         case .Hit:
             if SplitStatus == 0 {
                 player.addCards(card)
-                if !checkScore(player) { endRound() }
-                return (checkScore(player))
+                if !checkScore(player) {
+                    endRound()
+                    return false
+                }
+                return true
             }
             else if SplitStatus == 1 {
                 player.addCards(card)
@@ -163,7 +166,8 @@ class Game {
                 return false
                 
             }
-            break
+            endRound()
+            return (false)
         case .Surrender:
             player.surrender()
             return (false)
@@ -200,7 +204,7 @@ class Game {
             Dealerhand.addCards(card)
         }
         
-        var player = PlayersHands[0]
+        let player = PlayersHands[0]
         //check if player has won
             
         if player.sumCards() <= 21 && (Dealerhand.sumCards() > 21 || player.sumCards() > Dealerhand.sumCards()) {
@@ -215,9 +219,6 @@ class Game {
         
         updateChips(player)
         
-        //reset player hand 
-        player.HandCard = []
-
         return redCardPresent
     }
 
@@ -236,5 +237,12 @@ class Game {
         }
     }
     
-    
+    func NewGame(){
+        //reset player hand
+        let player = PlayersHands[0]
+        player.HandCard = []
+        player.status = 0
+        SplitStatus = 0
+        Dealerhand.HandCard = []
+    }
 }

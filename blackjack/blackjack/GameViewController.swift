@@ -508,7 +508,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     
     func callbackAlertEndGame(alert: UIAlertAction!) {
         resetUI()
-        
+        game.NewGame()
         if(game.redCardPresent){
             //reset : new Blue Index
             let indexBlue = UIAlertController(title: "Index blue card", message: "Chosse blue card position (5 - 310)", preferredStyle: UIAlertControllerStyle.Alert)
