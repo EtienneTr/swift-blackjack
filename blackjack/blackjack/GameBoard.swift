@@ -128,11 +128,11 @@ class Game {
         
         
         // juste pour tester *******
-        PlayersHands[0].halveStakes()
+        /*PlayersHands[0].halveStakes()
         print(PlayersHands[0].stakes!.White)
         print(PlayersHands[0].stakes!.Red)
         print(PlayersHands[0].stakes!.Green)
-        print(PlayersHands[0].stakes!.Blue)
+        print(PlayersHands[0].stakes!.Blue)*/
         // *********
         
         switch(action){

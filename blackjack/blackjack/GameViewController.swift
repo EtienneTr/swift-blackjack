@@ -313,6 +313,8 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     @IBAction func OnSurrAction(sender: UIButton) {
         print("Surrender")
         game.checkActions(game.PlayersHands[0], action: .Surrender)
+        updateBetChips()
+        updateTotalChips()  
     }
     
     @IBAction func OnInsurAction(sender: UIButton) {

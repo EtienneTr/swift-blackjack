@@ -57,6 +57,7 @@ class Chips{
         }
         else{
         Blue = result
+        result = 0
         bChanged = true
         }
         }
