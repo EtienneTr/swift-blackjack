@@ -203,21 +203,20 @@ class Game {
             Dealerhand.addCards(card)
         }
         
+        var player = PlayersHands[0]
         //check if player has won
-        for i in 0...3 {
             
-            if PlayersHands[i].sumCards() <= 21 && (Dealerhand.sumCards() > 21 || PlayersHands[i].sumCards() > Dealerhand.sumCards()) {
-                PlayersHands[i].status = 2 //player won
+            if player.sumCards() <= 21 && (Dealerhand.sumCards() > 21 || player.sumCards() > Dealerhand.sumCards()) {
+                player.status = 2 //player won
             }
-            else if PlayersHands[i].sumCards() == Dealerhand.sumCards(){
-                PlayersHands[i].status = 1 //tie
+            else if player.sumCards() == Dealerhand.sumCards(){
+                player.status = 1 //tie
             }
             else {
-                PlayersHands[i].status = 0 //player lost
+                player.status = 0 //player lost
             }
             
-            updateChips(PlayersHands[i])
-        }
+            updateChips(player)
         
         
 
