@@ -418,31 +418,33 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     }
     
     func UIHit(){
-        let card = game.PlayersHands[0].HandCard.last!
-        let text = String(card.type!) + " " + String(card.suit!)
+        if(game.PlayersHands[0].HandCard.count > 0){
+            let card = game.PlayersHands[0].HandCard.last!
+            let text = String(card.type!) + " " + String(card.suit!)
         
-        if(UserCard11.text == ""){
-            UserCard11.text = text
-            UserCard11.hidden = false
-        } else if (UserCard22.text == ""){
-            UserCard22.text = text
-            UserCard22.hidden = false
-        } else if (UserCard13.text == ""){
-            UserCard13.text = text
-            UserCard13.hidden = false
-        } else if (UserCard23.text == ""){
-            UserCard23.text = text
-            UserCard23.hidden = false
-        } else if (UserCard14.text == ""){
-            UserCard14.text = text
-            UserCard14.hidden = false
-        } else if (UserCard24.text == ""){
-            UserCard24.text = text
-            UserCard24.hidden = false
+            if(UserCard11.text == ""){
+                UserCard11.text = text
+                UserCard11.hidden = false
+            } else if (UserCard22.text == ""){
+                UserCard22.text = text
+                UserCard22.hidden = false
+            } else if (UserCard13.text == ""){
+                UserCard13.text = text
+                UserCard13.hidden = false
+            } else if (UserCard23.text == ""){
+                UserCard23.text = text
+                UserCard23.hidden = false
+            } else if (UserCard14.text == ""){
+                UserCard14.text = text
+                UserCard14.hidden = false
+            } else if (UserCard24.text == ""){
+                UserCard24.text = text
+                UserCard24.hidden = false
+            }
+        
+            //score
+            UIupdateScore()
         }
-        
-        //score
-        UIupdateScore()
 
     }
     
