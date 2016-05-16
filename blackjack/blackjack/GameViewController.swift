@@ -157,7 +157,8 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     }
     
     //ALERT
-    func gameAlert(text : String){
+    func gameAlert(var text : String){
+        text += "\n Your point : " + String(game.PlayersHands[0].sumCards()) + "\n Dealer point : " + String(game.Dealerhand.sumCards())
         let newWordPrompt = UIAlertController(title: "Game message", message: text, preferredStyle: UIAlertControllerStyle.Alert)
         
         newWordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: callbackAlertEndGame))
