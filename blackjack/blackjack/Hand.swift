@@ -40,6 +40,7 @@ class PlayerHand : Hand {
     var stakes : Chips?    //la mise
     var insurance: Chips?
     var insured: Bool = false
+    var win: Bool = false
     
     //init user with chips
     override init(){

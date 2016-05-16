@@ -16,6 +16,7 @@ class Game {
     var PlayersHands : [PlayerHand] = []
     var Dealerhand : DealerHand = DealerHand()
     var SplitStatus = 0 //0 : no split, 1: split first hand,  2: split second
+    var redCardPresent = false // to signal presence of red card
     
     init(){
         //init Shoe
@@ -47,6 +48,9 @@ class Game {
         let redCard = Cards()
         currShoe.insert(redCard, atIndex: Int(arc4random_uniform(250)+30))
         
+        //reset to false 
+        redCardPresent = false
+        
         //remove first 5 cards of the deck
         for _ in 1...5 {
             currShoe.removeFirst()
@@ -76,6 +80,7 @@ class Game {
         var i = 0;
         var card : Cards
         
+        
         for _ in 0..<10{
             
             if (i > 4){
@@ -103,8 +108,22 @@ class Game {
         
     }
     
+    
+    
     func checkActions(player: PlayerHand, action: actionType)->Bool{
-        let card = currShoe.removeFirst()
+
+        
+        let card = checkRedCard()
+        
+        
+        // juste pour tester *******
+        PlayersHands[0].halveStakes()
+        print(PlayersHands[0].stakes!.White)
+        print(PlayersHands[0].stakes!.Red)
+        print(PlayersHands[0].stakes!.Green)
+        print(PlayersHands[0].stakes!.Blue)
+        // *********
+        
         switch(action){
         case .Hit:
             player.addCards(card)
@@ -145,9 +164,33 @@ class Game {
         return(player.sumCards()<=21)
     }
     
-    func endRound(){
+    func endRound()->Bool {
+        // returns true if cards need to be reshuffled ( remelanger, couper etc )
         //TODO : IF WIN
         
+        //dealer hits until 17
+        while Dealerhand.sumCards() < 17 {
+            let card = checkRedCard()
+            Dealerhand.addCards(card)
+        }
+        
+        //check if player has won
+        for i in 0...3 {
+            if PlayersHands[i].sumCards() > Dealerhand.sumCards() && PlayersHands[i] <= 21 {
+                PlayersHands[i].win = true
+            }
+        }
+        
+        return redCard
+    }
+    
+    func checkRedCard()->Card{
+        var card = currShoe.removeFirst()
+        if card.type == nil {
+            redCard = true
+            card = currShoe.removeFirst()
+        }
+        return card
     }
 }
 
