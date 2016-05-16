@@ -487,7 +487,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         }else if (game.PlayersHands[0].status == 1){
             //tie
             text = "It's a tie !"
-        }else if (game.PlayersHands[0].status == 1){
+        }else if (game.PlayersHands[0].status == 2){
             //win
             text = "You win the round"
         }else{

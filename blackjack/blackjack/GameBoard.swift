@@ -168,11 +168,15 @@ class Game {
             endRound()
             return (false)
         case .Surrender:
+            //loose
             player.surrender()
+            player.status = 0
+            updateChips(player)
             return (false)
         case .DoubleDown:
             player.doubleDown()
             player.addCards(card)
+            endRound()
             return(false)
         case .Split:
             player.split()
