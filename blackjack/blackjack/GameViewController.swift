@@ -229,6 +229,8 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         UserCard14.hidden = true
         UserCard14.text = ""
         UserSplit1Label.hidden = true
+        HandSplit1View.layer.borderWidth = 0
+        HandSplit2View.layer.borderWidth = 0
         
         UserCard22.hidden = true
         UserCard22.text = ""

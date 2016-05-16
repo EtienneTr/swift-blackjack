@@ -148,7 +148,7 @@ class Game {
             else if SplitStatus == 1 {
                 player.addCards(card)
                 if !checkScore(player) { SplitStatus = 2 }
-                return(checkScore(player))
+                return(true)
             }
             else if SplitStatus == 2 {
                 player.secondHand!.addCards(card)
