@@ -137,17 +137,32 @@ class Game {
         
         switch(action){
         case .Hit:
-            player.addCards(card)
-            return(checkScore(player))
+            if SplitStatus == 0 {
+                player.addCards(card)
+                if !checkScore(player) { endRound() }
+                return (checkScore(player))
+            }
+            else if SplitStatus == 1 {
+                player.addCards(card)
+                if !checkScore(player) { SplitStatus = 2 }
+                return(checkScore(player))
+            }
+            else if SplitStatus == 2 {
+                player.secondHand?.addCards(card)
+                if !checkScore(player.secondHand!) { endRound() }
+                return(checkScore(player.secondHand!))
+            }
         case .Stay:
             //split : goto hand 2
             if(SplitStatus == 1){
                 SplitStatus = 2;
+                return true
             } else if (SplitStatus == 2){
                 SplitStatus = 0
+                endRound()
+                return false
                 //END game
             }
-                
             break
         case .Surrender:
             player.surrender()
@@ -172,7 +187,7 @@ class Game {
     
     
     func checkScore(player: PlayerHand)->Bool{
-        return(player.sumCards()<=21)
+        return(player.sumCards()<21)
     }
     
     func endRound()->Bool {
@@ -197,6 +212,8 @@ class Game {
             else {
                 PlayersHands[i].status = 0 //player lost
             }
+            
+            updateChips(PlayersHands[i])
         }
         
         
