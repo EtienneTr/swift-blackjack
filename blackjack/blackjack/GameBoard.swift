@@ -161,9 +161,6 @@ class Game {
                 SplitStatus = 0
                 endRound()
                 return false
-                //END game
-                endRound()
-                updateChips(player)
                 
             }
             break
